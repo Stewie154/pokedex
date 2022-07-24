@@ -1,4 +1,28 @@
-# Getting Started with Create React App and Redux
+# Pokedex
+A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokemon data to come from poke api: https://pokeapi.co/
+
+* Step 1:
+	* Generate a react app with redux-toolkit with ` npx create-react-app my-app --template redux `
+	* Install tailwind https://tailwindcss.com/docs/guides/create-react-app
+
+* Step 2:
+	* Remove boilerplate code
+	* Create header component
+	* Create pokemon 'slice'
+	* Install axios
+	* Make api call to on page load and save some pokemon in the store
+	* Make sure A loading spinner shows when pokemon are being retrieved 
+	* Render a list of pokemon components for each pokemon in the store
+
+* Step 3: 
+	* Create a pagination component 
+	* Create a pagination slice
+	* Save the next and prev urls in the redux store 
+	* Create a button component and render prev / next buttons
+	* Make sure the buttons only show if a prev / next url is available (eg no prev button on first page)
+
+
+## Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
