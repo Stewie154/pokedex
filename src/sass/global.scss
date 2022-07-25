@@ -21,9 +21,9 @@ body {
 	height: 100vh;
 }
 
-// .bg-primary {
-// 	background: url('/images/blue-bg-graphic.jpg');
-// }
+.bg-primary {
+	background-color: $background-primary;
+}
 
 .border-container {
 	border: 1px solid #000;
