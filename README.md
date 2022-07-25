@@ -7,6 +7,11 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 
 * Step 2:
 	* Remove boilerplate code
+	* Set up folder structure in src
+		* screens 
+		* components
+		* redux
+		* sass
 	* Create header component
 	* Create Home and Pokemon screens 
 	* Install react router dom ` npm i react-router-dom `
