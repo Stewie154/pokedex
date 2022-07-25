@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
 	return (
-		<div className="App">
+		<div className="container mx-auto bg-red-500 h-8/12">
 			App
 		</div>
 	);
