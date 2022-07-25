@@ -12,17 +12,21 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 		* components
 		* redux
 		* sass
+	* Style app component to be a main container which houses all content in the application, locate in center of screen
 	* Create header component
 	* Create Home and Pokemon screens 
 	* Install react router dom ` npm i react-router-dom `
-	* Create routes for home and /pokemon/:id
+	* Create routes for home / and pokemon view /pokemon
+	
+
+* Step 3: 
 	* Create pokemon 'slice'
 	* Install axios
 	* Make api call to on page load and save some pokemon in the store
 	* Make sure A loading spinner shows when pokemon are being retrieved 
 	* Render a list of pokemon components for each pokemon in the store
 
-* Step 3: 
+* Step 4:
 	* Create a pagination component 
 	* Create a pagination slice
 	* Save the next and prev urls in the redux store 
