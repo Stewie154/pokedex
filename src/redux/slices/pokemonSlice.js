@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const initialState = []
 
-export const fetchPokemon = createAsyncThunk(
+export const fetchPokemonList = createAsyncThunk(
 	'pokemonStatus',
 	async () => {
 		let response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
