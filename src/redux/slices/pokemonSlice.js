@@ -1,12 +1,22 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios'
 
-const initialState = []
+const initialState = {
+	pokemon: [],
+	is_Loading: true,
+	selected_pokemon: {}
+}
 
 export const fetchPokemonList = createAsyncThunk(
 	'pokemonStatus',
-	async () => {
-		let response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
-		console.log(response.data)
+	async (state) => {
+		try {
+			const response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
+			return response.data
+		} 
+		catch (error) {
+			return error
+		}
 	}
 )
+
