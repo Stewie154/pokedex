@@ -25,7 +25,9 @@ const pokemonSlice = createSlice({
 	name: 'pokemon',
 	initialState: initialState,
 	reducers: {
-
+		selectPokemon: (state, action) => {
+			state.selected_pokemon = action.payload
+		}
 	},
 	extraReducers: {
 		[fetchPokemonList.pending]: (state) => {
