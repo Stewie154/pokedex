@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function PokemonScreen() {
-	return (
-		<div>PokemonScreen</div>
-	)
+const PokemonScreen = () => {
+  return (
+	<div>PokemonScreen</div>
+  )
 }
+
+export default PokemonScreen
