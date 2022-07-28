@@ -26,6 +26,8 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 	* Make api call to on page load and save some pokemon in the store
 	* Make sure A loading spinner shows when pokemon are being retrieved 
 	* Render a list of pokemon components for each pokemon in the store
+	* When a pokemon is clicked, navigate to pokemon screen and display some info about it (with a picture)
+	* Add a back button to get back the list on the home screen
 
 * Step 4:
 	* Create a pagination component 
