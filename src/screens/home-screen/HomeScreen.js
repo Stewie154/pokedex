@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPokemonList } from '../../redux/slices/pokemonSlice'
-import Header from '../../components/header/Header'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 
 const HomeScreen = () => {
@@ -24,7 +23,6 @@ const HomeScreen = () => {
 
 	return (
 		<div>
-			<Header />
 			{renderPokemon()}
 		</div>
 	)
