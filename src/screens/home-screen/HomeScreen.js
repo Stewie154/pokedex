@@ -11,15 +11,14 @@ const HomeScreen = () => {
 
 	useEffect(() => {
 		dispatch(fetchPokemonList())
-	}, [])
+	}, [dispatch])
 
 	const renderPokemon = () => {
 		if (is_loading) {
 			return <LoadingSpinner />
 		}
 		if (pokemon_list !== []) {
-			// return pokemon_list.map(pokemon => <p>{pokemon.name}</p>)
-			return <PokemonListItem name="Squirtle"/>
+			return pokemon_list.map(pokemon =>  <PokemonListItem key={pokemon.name} name={pokemon.name}/>)
 		}
 	}
 
