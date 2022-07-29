@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function PokemonListItem() {
+const PokemonListItem = () => {
 	return (
 		<div>PokemonListItem</div>
 	)
 }
+
+export default PokemonListItem

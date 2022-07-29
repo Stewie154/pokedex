@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Header() {
+const Header = () => {
 	return (
 		<div className="w-full flex justify-between">
 			<h1 className="text-4xl lg:text-6xl text-center">Pokedex</h1>
@@ -8,3 +8,5 @@ export default function Header() {
 		</div>
 	)
 }
+
+export default Header
