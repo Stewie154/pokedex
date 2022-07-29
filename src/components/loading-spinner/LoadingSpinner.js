@@ -3,7 +3,7 @@ import './LoadingSpinner.scss'
 
 const LoadingSpinner = () => {
   return (
-	<div className="spinner-container">
+	<div className="spinner-container absolute top-0 right-0">
 		<div className="loading-spinner">
 		</div>
 	</div>
