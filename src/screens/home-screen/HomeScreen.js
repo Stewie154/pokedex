@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPokemonList } from '../../redux/slices/pokemonSlice'
 import Header from '../../components/header/Header'
+import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 
 const HomeScreen = () => {
 	const dispatch = useDispatch()
@@ -14,7 +15,7 @@ const HomeScreen = () => {
 
 	const renderPokemon = () => {
 		if (is_loading) {
-			return <h1>Loading...</h1>
+			return <LoadingSpinner />
 		}
 		if (pokemon_list !== []) {
 			return pokemon_list.map(pokemon => <p>{pokemon.name}</p>)
