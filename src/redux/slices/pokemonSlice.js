@@ -14,7 +14,7 @@ export const fetchPokemonList = createAsyncThunk(
 		try {
 			const response = await axios.get('https://pokeapi.co/api/v2/pokemon/')
 			return response.data
-		} 
+		}
 		catch (error) {
 			return error
 		}
@@ -24,7 +24,6 @@ export const fetchPokemonList = createAsyncThunk(
 export const fetchSinglePokemon = createAsyncThunk(
 	'pokemon/fetchSinglePokemon',
 	async (pokemon_url) => {
-		console.log(pokemon_url)
 		try {
 			const response = await axios.get(pokemon_url)
 			return response.data
@@ -60,6 +59,7 @@ const pokemonSlice = createSlice({
 		},
 		[fetchSinglePokemon.fulfilled]: (state, action) => {
 			state.is_loading = false
+			state.selected_pokemon = action.payload
 			console.log(action.payload)
 		},
 		[fetchSinglePokemon.rejected]: (state, action) => {
