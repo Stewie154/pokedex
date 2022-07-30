@@ -5,7 +5,7 @@ const FilterIcon = () => {
 		<img
 			src='/images/filter-outline.svg'
 			alt="filter icon"
-			className="w-10 cursor-pointer hover:opacity-50"
+			className="w-12 cursor-pointer hover:opacity-50"
 		/>
 	)
 }
