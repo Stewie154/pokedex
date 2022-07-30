@@ -11,6 +11,8 @@ const PokemonScreen = () => {
 			<img src={image} alt={selected_pokemon.name} className="w-4/12"/>
 			<div className='w-7/12'>
 				<h2 className='capitalize underline text-4xl text-center mb-10'>{selected_pokemon.name}</h2>
+				<p className="text-2xl mb-5">Height: {selected_pokemon.height * 10} cm</p>
+				<p className="text-2xl">Weight: {selected_pokemon.weight / 10} kg</p>
 			</div>
 		</section>
 		
