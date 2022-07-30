@@ -7,8 +7,13 @@ const PokemonScreen = () => {
 	const image = selected_pokemon.sprites.other.dream_world.front_default
   return (
 	<div>
-		{selected_pokemon.name}
-		<img src={image} />
+		<section className='w-full flex justify-between mt-5'>
+			<img src={image} alt={selected_pokemon.name} className="w-4/12"/>
+			<div className='w-7/12'>
+				<h2 className='capitalize underline text-4xl text-center mb-10'>{selected_pokemon.name}</h2>
+			</div>
+		</section>
+		
 	</div>
   )
 }

@@ -25,7 +25,7 @@ const PokemonListItem = ({ name, url }) => {
 			onMouseLeave={() => handleHover()}
 			onClick={() => handleClick(url, name)}
 		>
-			<h2 className="text-3xl hover:opacity-50">{name}</h2>
+			<h2 className="text-3xl capitalize hover:opacity-50">{name}</h2>
 			<img src='/images/pokeball.png' className={`w-10 ${hovering && 'animate-spin'}`} alt="pokeball" />
 		</div>
 	)
