@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
