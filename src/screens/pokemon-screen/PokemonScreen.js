@@ -10,7 +10,7 @@ const PokemonScreen = () => {
 	<div>
 		<section className='w-full flex flex-col justify-between items-center mt-5'>
 			<h2 className='capitalize underline text-4xl text-center mb-10'>{name}</h2>
-			<div style={{backgroundImage: `url(${image})`}} className="w-6/12 bg-center bg-contain bg-no-repeat pb-[45%]"></div>
+			<div style={{backgroundImage: `url(${image})`}} className="w-full md:w-6/12 pb-[75%] sm:pb-[45%] bg-center bg-contain bg-no-repeat"></div>
 			<div className='w-7/12'>
 				<div className="">
 					<p className="text-2xl mb-5 w-6/12">Height: {height * 10} cm</p>
