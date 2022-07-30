@@ -21,6 +21,18 @@ export const fetchPokemonList = createAsyncThunk(
 	}
 )
 
+export const fetchSinglePokemon = createAsyncThunk(
+	'pokemon/fetchSinglePokemon',
+	async (pokemon_url) => {
+		try {
+			const response = await axios.get(pokemon_url)
+			return response.data
+		} catch (error) {
+			return error
+		}
+	}
+)
+
 const pokemonSlice = createSlice({
 	name: 'pokemon',
 	initialState: initialState,
@@ -41,6 +53,17 @@ const pokemonSlice = createSlice({
 		[fetchPokemonList.rejected]: (state, action) => {
 			state.is_loading = false
 			state.error = action.payload
+		},
+		[fetchSinglePokemon.pending]: (state) => {
+			state.is_loading = true
+		},
+		[fetchSinglePokemon.fulfilled]: (state, action) => {
+			state.is_loading = false
+			console.log(action.payload)
+		},
+		[fetchSinglePokemon.rejected]: (state, action) => {
+			state.is_loading = false
+			console.log(action.payload)
 		}
 	}
 })
