@@ -39,6 +39,11 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 	* Create a button component and render prev / next buttons
 	* Make sure the buttons only show if a prev / next url is available (eg no prev button on first page)
 
+* Step 5:
+	* Create a form component that gives the user option of which generation of pokemon to choose
+	* Show form on filter icon click
+	* Get form functional so the api url accommodates the user's form input and retrieves the correct pokemon 
+
 
 ## Getting Started with Create React App and Redux
 
