@@ -18,7 +18,7 @@ const HomeScreen = () => {
 			return <LoadingSpinner />
 		}
 		if (pokemon_list !== []) {
-			return pokemon_list.map(pokemon =>  <PokemonListItem key={pokemon.name} name={pokemon.name}/>)
+			return pokemon_list.map(pokemon =>  <PokemonListItem key={pokemon.name} name={pokemon.name} url={pokemon.url}/>)
 		}
 	}
 

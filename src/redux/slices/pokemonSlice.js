@@ -24,6 +24,7 @@ export const fetchPokemonList = createAsyncThunk(
 export const fetchSinglePokemon = createAsyncThunk(
 	'pokemon/fetchSinglePokemon',
 	async (pokemon_url) => {
+		console.log(pokemon_url)
 		try {
 			const response = await axios.get(pokemon_url)
 			return response.data
