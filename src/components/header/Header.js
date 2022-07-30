@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import FilterIcon from '../icon-components/FilterIcon'
+
 const Header = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
 	const renderIcon = (selected_pokemon) => {
-		return selected_pokemon === null ? <img src='/images/filter-outline.svg' alt="filter icon" className="w-10 cursor-pointer hover:opacity-50" /> : <p>Back</p>
+		return selected_pokemon === null ? <FilterIcon /> : <p>Back</p>
 
 	}
 
