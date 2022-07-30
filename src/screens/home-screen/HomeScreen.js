@@ -23,7 +23,7 @@ const HomeScreen = () => {
 	}
 
 	return (
-		<div className='w-full h-full overflow-scroll pt-10'>
+		<div className='w-full h-4/6 overflow-scroll'>
 			{renderPokemon()}
 		</div>
 	)
