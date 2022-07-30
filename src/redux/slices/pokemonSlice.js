@@ -4,7 +4,7 @@ import axios from 'axios'
 const initialState = {
 	pokemon_list: [],
 	is_loading: true,
-	selected_pokemon: {},
+	selected_pokemon: null,
 	error: ''
 }
 
