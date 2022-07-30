@@ -46,7 +46,6 @@ const pokemonSlice = createSlice({
 			state.is_loading = true
 		},
 		[fetchPokemonList.fulfilled]: (state, action) => {
-			console.log(action)
 			state.is_loading = false
 			state.pokemon_list = action.payload.results
 		},
@@ -60,11 +59,9 @@ const pokemonSlice = createSlice({
 		[fetchSinglePokemon.fulfilled]: (state, action) => {
 			state.is_loading = false
 			state.selected_pokemon = action.payload
-			console.log(action.payload)
 		},
 		[fetchSinglePokemon.rejected]: (state, action) => {
 			state.is_loading = false
-			console.log(action.payload)
 		}
 	}
 })
