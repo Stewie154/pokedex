@@ -37,8 +37,8 @@ const pokemonSlice = createSlice({
 	name: 'pokemon',
 	initialState: initialState,
 	reducers: {
-		selectPokemon: (state, action) => {
-			state.selected_pokemon = action.payload
+		removeSelectedPokemon: (state) => {
+			state.selected_pokemon = null
 		}
 	},
 	extraReducers: {
@@ -65,6 +65,8 @@ const pokemonSlice = createSlice({
 		}
 	}
 })
+
+export const { removeSelectedPokemon } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
 

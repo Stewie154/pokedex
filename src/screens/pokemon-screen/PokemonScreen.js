@@ -4,12 +4,10 @@ import { useSelector } from 'react-redux'
 const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
 	const { name, height, weight, types } = selected_pokemon
-	console.log(selected_pokemon)
 	const image = selected_pokemon.sprites.other.dream_world.front_default
 
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
-			console.log(type_item)
 			return <p className="mb-3 text-2xl uppercase text-center w-full w-6/12" key={key}>{type_item.type.name}</p>
 		})
 	}
