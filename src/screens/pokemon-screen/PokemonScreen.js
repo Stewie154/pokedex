@@ -10,12 +10,12 @@ const PokemonScreen = () => {
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
 			console.log(type_item)
-			return <p className="mb-3 text-2xl uppercase text-center w-6/12" key={key}>{type_item.type.name}</p>
+			return <p className="mb-3 text-2xl uppercase text-center w-full w-6/12" key={key}>{type_item.type.name}</p>
 		})
 	}
 
 	return (
-		<div>
+		<div className="h-5/6 overflow-scroll py-5">
 			<section className='w-full flex flex-col justify-between items-center mt-5'>
 				<h2 className='capitalize underline text-4xl text-center mb-10'>{name}</h2>
 				<div
@@ -24,11 +24,11 @@ const PokemonScreen = () => {
 				>
 				</div>
 				<div className='w-full mt-10 flex flex-wrap items-center justify-center'>
-					<div className="w-full flex justify-center items-center">
+					<div className="w-full flex flex-wrap justify-center items-center">
 						{renderTypes(types)}
 					</div>
-					<p className="mb-3 text-2xl text-center w-6/12">Height: {height * 10} cm</p>
-					<p className="mb-3 text-2xl text-center w-6/12">Weight: {weight / 10} kg</p>
+					<p className="mb-3 text-2xl text-center w-full sm:w-6/12">Height: {height * 10} cm</p>
+					<p className="mb-3 text-2xl text-center w-full sm:w-6/12">Weight: {weight / 10} kg</p>
 				</div>
 			</section>
 
