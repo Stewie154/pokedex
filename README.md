@@ -43,6 +43,9 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 	* Show form on filter icon click
 	* Get form functional so the api url accommodates the user's form input and retrieves the correct pokemon 
 
+* Step 6:
+	* Add animations throughout app
+	* add a light / dark mode toggle, create a new slice for this and conditionally render the light / dark classes throughout app
 
 ## Getting Started with Create React App and Redux
 
