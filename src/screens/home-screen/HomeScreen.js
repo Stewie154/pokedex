@@ -10,7 +10,7 @@ const HomeScreen = () => {
 	const { pokemon_list, is_loading } = useSelector(store => store.pokemon)
 
 	useEffect(() => {
-		dispatch(fetchPokemonList())
+		dispatch(fetchPokemonList('https://pokeapi.co/api/v2/pokemon/'))
 	}, [dispatch])
 
 	const renderPokemon = () => {
