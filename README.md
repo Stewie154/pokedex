@@ -40,6 +40,7 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 
 * Step 5:
 	* Create a form component that gives the user option of which generation of pokemon to choose
+	* Show form component on page load, user to submit and then display pokemon list
 	* Show form on filter icon click
 	* Get form functional so the api url accommodates the user's form input and retrieves the correct pokemon 
 
