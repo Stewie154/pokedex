@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchPokemonList } from '../../redux/slices/pokemonSlice'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import PokemonListItem from '../../components/pokemon-list-item/PokemonListItem'
 
 const HomeScreen = () => {
-	const dispatch = useDispatch()
 
 	const { pokemon_list, is_loading } = useSelector(store => store.pokemon)
 
-	useEffect(() => {
-		dispatch(fetchPokemonList('https://pokeapi.co/api/v2/pokemon/'))
-	}, [dispatch])
+	
 
 	const renderPokemon = () => {
 		if (is_loading) {

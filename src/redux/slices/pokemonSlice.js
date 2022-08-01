@@ -48,7 +48,6 @@ const pokemonSlice = createSlice({
 			state.is_loading = true
 		},
 		[fetchPokemonList.fulfilled]: (state, action) => {
-			console.log(action.payload)
 			state.is_loading = false
 			state.pokemon_list = action.payload.results
 			state.next_url = action.payload.next
