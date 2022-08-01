@@ -5,7 +5,9 @@ const initialState = {
 	pokemon_list: [],
 	is_loading: true,
 	selected_pokemon: null,
-	error: ''
+	error: '',
+	next_url: null,
+	prev_url: null
 }
 
 export const fetchPokemonList = createAsyncThunk(
@@ -46,8 +48,11 @@ const pokemonSlice = createSlice({
 			state.is_loading = true
 		},
 		[fetchPokemonList.fulfilled]: (state, action) => {
+			console.log(action.payload)
 			state.is_loading = false
 			state.pokemon_list = action.payload.results
+			state.next_url = action.payload.next
+			state.prev_url = action.payload.prev
 		},
 		[fetchPokemonList.rejected]: (state, action) => {
 			state.is_loading = false
