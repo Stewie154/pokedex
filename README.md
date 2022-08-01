@@ -46,6 +46,7 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 * Step 6:
 	* Add animations throughout app
 	* add a light / dark mode toggle, create a new slice for this and conditionally render the light / dark classes throughout app
+	* Add feedback to ui to let user know they can scroll the page to see more pokemon
 
 ## Getting Started with Create React App and Redux
 
