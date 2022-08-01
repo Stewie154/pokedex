@@ -52,7 +52,7 @@ const pokemonSlice = createSlice({
 			state.is_loading = false
 			state.pokemon_list = action.payload.results
 			state.next_url = action.payload.next
-			state.prev_url = action.payload.prev
+			state.prev_url = action.payload.previous
 		},
 		[fetchPokemonList.rejected]: (state, action) => {
 			state.is_loading = false
