@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import PokemonListItem from '../../components/pokemon-list-item/PokemonListItem'
+import Pagination from '../../components/pagination/Pagination'
+
 
 const HomeScreen = () => {
 
@@ -19,9 +21,13 @@ const HomeScreen = () => {
 	}
 
 	return (
-		<div className='w-full h-4/6 overflow-scroll'>
-			{renderPokemon()}
-		</div>
+		<>
+			<div className='w-full h-4/6 overflow-scroll'>
+				{renderPokemon()}
+			</div>
+			<Pagination />
+		</>
+		
 	)
 }
 
