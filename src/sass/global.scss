@@ -30,6 +30,10 @@ body {
 .bg-secondary {
 	background: $color-secondary;
 	color: $color-primary;
+	&:hover {
+		background: $color-primary;
+		color: $color-secondary;
+	}
 }
 
 .bg-gradient {
