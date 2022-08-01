@@ -34,9 +34,8 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 
 * Step 4:
 	* Create a pagination component 
-	* Create a pagination slice
 	* Save the next and prev urls in the redux store 
-	* Create a button component and render prev / next buttons
+	* Create prev / next buttons
 	* Make sure the buttons only show if a prev / next url is available (eg no prev button on first page)
 
 * Step 5:
