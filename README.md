@@ -39,8 +39,14 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 	* Make sure the buttons only show if a prev / next url is available (eg no prev button on first page)
 
 * Step 5:
-	* Create a form component that gives the user option of which generation of pokemon to choose
-	* Show form component on page load, user to submit and then display pokemon list
+	* Only fetch the first 151 pokemon (gen 1)
+	* Replace each item in pokemon_list with the result of calling the items url, leaving pokemon_list with more info for each pokemon
+	* Add a being_shown property to each item, default to true
+	* Create a PokemonCard component and render each pokemon with it's image and type.
+	* Add grid / list item icons to toggle the view from cards to a list.
+	* Clicking a card takes user to pokemonScreen
+	* Create custom pagination to only show 15 pokemon per page
+	* Create a form component that gives the user the option to filter pokemon by type (water, fire, grass etc)
 	* Show form on filter icon click
 	* Get form functional so the api url accommodates the user's form input and retrieves the correct pokemon 
 
