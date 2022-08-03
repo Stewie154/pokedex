@@ -40,6 +40,7 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 
 * Step 5:
 	* Only fetch the first 151 pokemon (gen 1)
+	* Get fetchSinglePokemon action to fire for every pokemon on home screen, then console log the updated pokemon_list
 	* Replace each item in pokemon_list with the result of calling the items url, leaving pokemon_list with more info for each pokemon
 	* Add a being_shown property to each item, default to true
 	* Create a PokemonCard component and render each pokemon with it's image and type.
