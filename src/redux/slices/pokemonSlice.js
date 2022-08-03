@@ -39,6 +39,9 @@ const pokemonSlice = createSlice({
 	name: 'pokemon',
 	initialState: initialState,
 	reducers: {
+		selectPokemon: (state, action) => {
+			state.selected_pokemon = action.payload
+		},
 		removeSelectedPokemon: (state) => {
 			state.selected_pokemon = null
 		}
@@ -62,15 +65,16 @@ const pokemonSlice = createSlice({
 		},
 		[fetchSinglePokemon.fulfilled]: (state, action) => {
 			state.is_loading = false
-			state.selected_pokemon = action.payload
+			let index = state.pokemon_list.findIndex(pokemon => pokemon.name === action.payload.name)
+			state.pokemon_list[index] = action.payload
 		},
-		[fetchSinglePokemon.rejected]: (state, action) => {
+		[fetchSinglePokemon.rejected]: (state) => {
 			state.is_loading = false
 		}
 	}
 })
 
-export const { removeSelectedPokemon } = pokemonSlice.actions
+export const { selectPokemon, removeSelectedPokemon } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
 
