@@ -9,7 +9,7 @@ const App = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		dispatch(fetchPokemonList('https://pokeapi.co/api/v2/pokemon/'))
+		dispatch(fetchPokemonList('https://pokeapi.co/api/v2/pokemon/?limit=151'))
 	}, [dispatch])
 	return (
 		<div className="container w-full max-w-[700px] h-[80vh] bg-primary px-10 mx-2 sm:mx-10 rounded-lg border-container">
