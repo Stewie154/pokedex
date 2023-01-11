@@ -19,10 +19,10 @@ export const fetchPokemonList = createAsyncThunk(
 			let pokemon_data = []
 			results.forEach(pokemon => {
 				axios.get(pokemon.url).then(res => {
+					console.log(res)
 					pokemon_data.push(res.data)
 				}).catch(err => console.log(err))
 			});
-			console.log(pokemon_data)
 
 			return response.data
 		}
