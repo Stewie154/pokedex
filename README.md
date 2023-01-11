@@ -1,6 +1,12 @@
 # Pokedex
 A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokemon data to come from poke api: https://pokeapi.co/
 
+## First time set up
+
+`nvm use 14`
+`npm install`
+`npm start`
+
 * Step 1:
 	* Generate a react app with redux-toolkit with ` npx create-react-app my-app --template redux `
 	* Install tailwind https://tailwindcss.com/docs/guides/create-react-app
