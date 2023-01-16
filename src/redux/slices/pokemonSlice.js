@@ -46,14 +46,15 @@ const pokemonSlice = createSlice({
 			state.selected_pokemon = null
 		},
 		displayNextList: (state) => {
-			let lastDisplayedPokemon
-			for (let index = state.pokemon_list.length - 1; index >=0; index --) {
-				if (state.pokemon_list[index].being_displayed === true) {
-					lastDisplayedPokemon = state.pokemon_list[index]
+			let pokemon_list = state.pokemon_list
+			let last_displayed_pokemon
+			for (let index = pokemon_list.length - 1; index >=0; index --) {
+				if (pokemon_list[index].being_displayed === true) {
+					last_displayed_pokemon = pokemon_list[index]
 					break
 				}
 			}
-			console.log(current(lastDisplayedPokemon))
+			let pokemon_remaining 
 		}
 	},
 	extraReducers: {
