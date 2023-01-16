@@ -51,8 +51,16 @@ const pokemonSlice = createSlice({
 			state.is_loading = true
 		},
 		[fetchPokemonList.fulfilled]: (state, action) => {
+			let final_list = action.payload.results.map(pokemon => {
+				if (action.payload.results.indexOf(pokemon) <= 9) {
+					return {...pokemon, being_displayed: true}
+				}
+				else {
+					return {...pokemon, being_displayed: false}
+				}
+			})
 			state.is_loading = false
-			state.pokemon_list = action.payload.results
+			state.pokemon_list = final_list
 			state.next_url = action.payload.next
 			state.prev_url = action.payload.previous
 		},
