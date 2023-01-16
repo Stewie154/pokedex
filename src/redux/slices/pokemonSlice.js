@@ -55,10 +55,21 @@ const pokemonSlice = createSlice({
 				}
 			}
 			let pokemon_remaining = pokemon_list.slice(pokemon_list.indexOf(last_displayed_pokemon)).length - 1
-			console.log(pokemon_remaining)
-			// if (pokemon_list.slice(pokemon_list.indexOf(last_displayed_pokemon)).length >= 10) {
-			// 	console.log('more than 10 left!')
-			// }
+			let updated_list
+			if (pokemon_remaining >= 10) {
+				 updated_list = pokemon_list.map((pokemon, index) => {
+					if (index <= pokemon_list.indexOf(last_displayed_pokemon)) {
+						return {...pokemon, being_displayed: false}
+					}
+					else {
+						return pokemon
+					}
+					// if (index > indexOf(last_displayed_pokemon) & ) {
+
+					// }
+				})
+			}
+			state.pokemon_list = updated_list
 		}
 	},
 	extraReducers: {
