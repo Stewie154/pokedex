@@ -54,7 +54,11 @@ const pokemonSlice = createSlice({
 					break
 				}
 			}
-			let pokemon_remaining 
+			let pokemon_remaining = pokemon_list.slice(pokemon_list.indexOf(last_displayed_pokemon)).length - 1
+			console.log(pokemon_remaining)
+			// if (pokemon_list.slice(pokemon_list.indexOf(last_displayed_pokemon)).length >= 10) {
+			// 	console.log('more than 10 left!')
+			// }
 		}
 	},
 	extraReducers: {
