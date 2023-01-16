@@ -55,6 +55,7 @@ const pokemonSlice = createSlice({
 				}
 			}
 			let pokemon_remaining = pokemon_list.slice(pokemon_list.indexOf(last_displayed_pokemon)).length - 1
+			console.log(pokemon_remaining)
 			let updated_list
 			if (pokemon_remaining >= 10) {
 				 updated_list = pokemon_list.map((pokemon, index) => {
@@ -67,6 +68,16 @@ const pokemonSlice = createSlice({
 					else {
 						return {...pokemon, being_displayed: false}
 					}
+				})
+			}
+			if (pokemon_remaining < 10) {
+				updated_list = pokemon_list.map((pokemon, index) => {
+					if (index <= pokemon_list.indexOf(last_displayed_pokemon)) {
+						return {...pokemon, being_displayed: false}
+					}
+					else {
+						return {...pokemon, being_displayed: true}
+					} 
 				})
 			}
 			state.pokemon_list = updated_list
