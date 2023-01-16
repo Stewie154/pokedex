@@ -74,6 +74,7 @@ const pokemonSlice = createSlice({
 				})
 			}
 			state.pokemon_list = updated_list
+			state.last_pokemon_being_displayed = getLastDisplayedPokemon(updated_list)
 		}
 	},
 	extraReducers: {
