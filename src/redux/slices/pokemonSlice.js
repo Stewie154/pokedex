@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
 import axios from 'axios'
 
 const initialState = {
@@ -44,6 +44,9 @@ const pokemonSlice = createSlice({
 		},
 		removeSelectedPokemon: (state) => {
 			state.selected_pokemon = null
+		},
+		displayNextList: (state) => {
+			console.log(current(state.pokemon_list));
 		}
 	},
 	extraReducers: {
@@ -84,7 +87,7 @@ const pokemonSlice = createSlice({
 	}
 })
 
-export const { selectPokemon, removeSelectedPokemon } = pokemonSlice.actions
+export const { selectPokemon, removeSelectedPokemon, displayNextList } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
 

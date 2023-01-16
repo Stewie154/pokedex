@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchPokemonList } from '../../redux/slices/pokemonSlice'
+import { displayNextList } from '../../redux/slices/pokemonSlice'
 
 const Pagination = () => {
 	const { next_url, prev_url } = useSelector(store => store.pokemon)
@@ -8,11 +9,12 @@ const Pagination = () => {
 	const dispatch = useDispatch()
 
 	const handleNextBtnClick = () => {
-		dispatch(fetchPokemonList(next_url))
+		dispatch(displayNextList())
+
 	}
 
 	const handlePrevBtnClick = () => {
-		dispatch(fetchPokemonList(prev_url))
+		// dispatch(fetchPokemonList(prev_url))
 	}
 	
 	return (
