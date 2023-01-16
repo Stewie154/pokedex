@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
+import { getLastDisplayedPokemon } from '../../utilities/functions';
 import axios from 'axios'
 
 const initialState = {
@@ -47,15 +48,8 @@ const pokemonSlice = createSlice({
 		},
 		displayNextList: (state) => {
 			let pokemon_list = state.pokemon_list
-			let last_displayed_pokemon
-			for (let index = pokemon_list.length - 1; index >=0; index --) {
-				if (pokemon_list[index].being_displayed === true) {
-					last_displayed_pokemon = pokemon_list[index]
-					break
-				}
-			}
+			let last_displayed_pokemon = getLastDisplayedPokemon(pokemon_list)
 			let pokemon_remaining = pokemon_list.slice(pokemon_list.indexOf(last_displayed_pokemon)).length - 1
-			console.log(pokemon_remaining)
 			let updated_list
 			if (pokemon_remaining >= 10) {
 				 updated_list = pokemon_list.map((pokemon, index) => {
