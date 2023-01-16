@@ -61,12 +61,12 @@ const pokemonSlice = createSlice({
 					if (index <= pokemon_list.indexOf(last_displayed_pokemon)) {
 						return {...pokemon, being_displayed: false}
 					}
-					else {
-						return pokemon
+					if (index > pokemon_list.indexOf(last_displayed_pokemon) && index < pokemon_list.indexOf(last_displayed_pokemon) + 11) {
+						return {...pokemon, being_displayed: true}
 					}
-					// if (index > indexOf(last_displayed_pokemon) & ) {
-
-					// }
+					else {
+						return {...pokemon, being_displayed: false}
+					}
 				})
 			}
 			state.pokemon_list = updated_list
