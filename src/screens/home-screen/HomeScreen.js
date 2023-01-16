@@ -22,7 +22,7 @@ const HomeScreen = () => {
 
 	return (
 		<>
-			<div className='w-full h-4/6 overflow-scroll'>
+			<div className='w-full h-[80%] overflow-scroll'>
 				{renderPokemon()}
 			</div>
 			<Pagination />
