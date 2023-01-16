@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const initialState = {
 	pokemon_list: [],
+	last_pokemon_being_displayed: {},
 	is_loading: true,
 	selected_pokemon: null,
 	error: ''
@@ -90,6 +91,7 @@ const pokemonSlice = createSlice({
 			})
 			state.is_loading = false
 			state.pokemon_list = final_list
+			state.last_pokemon_being_displayed = getLastDisplayedPokemon(state.pokemon_list)
 		},
 		[fetchPokemonList.rejected]: (state, action) => {
 			state.is_loading = false
