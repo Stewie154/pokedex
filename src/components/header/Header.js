@@ -1,13 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import FilterIcon from '../icon-components/filter-icon/FilterIcon'
 import BackIcon from '../icon-components/back-icon/BackIcon'
 
 const Header = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
 	const renderIcon = (selected_pokemon) => {
-		return selected_pokemon === null ? <FilterIcon /> : <BackIcon />
+		return selected_pokemon === null ? undefined : <BackIcon />
 
 	}
 
