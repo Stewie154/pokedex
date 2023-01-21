@@ -4,10 +4,12 @@ import { displayNextList } from '../../redux/slices/pokemonSlice'
 
 const Pagination = () => {
 	const dispatch = useDispatch()
+	const pokemon_list = useSelector(state => state.pokemon.pokemon_list)
+	const last_pokemon_being_displayed = useSelector(state => state.pokemon.last_pokemon_being_displayed)
+	
 
 	const handleNextBtnClick = () => {
 		dispatch(displayNextList())
-
 	}
 
 	const handlePrevBtnClick = () => {
@@ -23,7 +25,7 @@ const Pagination = () => {
 				Prev
 			</button>
 			<button 
-				className="bg-secondary text-lg font-bold px-7 py-2 border rounded-lg transition-all duration-400"
+				className={`${pokemon_list[pokemon_list.length -1] == last_pokemon_being_displayed ? 'hidden' : 'bg-secondary text-lg font-bold px-7 py-2 border rounded-lg transition-all duration-400'} `}
 				onClick={() => handleNextBtnClick()}
 			>
 				Next
