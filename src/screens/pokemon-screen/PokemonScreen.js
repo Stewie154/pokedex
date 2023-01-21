@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import BackIcon from '../../components/icon-components/back-icon/BackIcon'
 
 const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
@@ -13,7 +14,8 @@ const PokemonScreen = () => {
 	}
 
 	return (
-		<div className="h-5/6 overflow-scroll py-5">
+		<div className="relative h-5/6 overflow-scroll py-5">
+			<BackIcon />
 			<section className='w-full flex flex-col justify-between items-center mt-5'>
 				<h2 className='capitalize underline text-4xl text-center mb-10'>{name}</h2>
 				<div

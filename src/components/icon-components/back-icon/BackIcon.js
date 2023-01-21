@@ -14,7 +14,7 @@ const BackIcon = () => {
 			<img
 				src='/images/icons/arrow-light-mode.svg'
 				alt="filter icon"
-				className="w-9 cursor-pointer hover:opacity-50"
+				className="w-10 top-10 absolute cursor-pointer hover:opacity-50"
 				onClick={() => handleClick()}
 			/>
 		</Link>
