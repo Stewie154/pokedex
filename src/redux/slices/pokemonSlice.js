@@ -75,6 +75,7 @@ const pokemonSlice = createSlice({
 				})
 			}
 			state.pokemon_list = updated_list
+			state.first_pokemon_being_displayed = updated_list.find(pokemon => pokemon.being_displayed === true)
 			state.last_pokemon_being_displayed = getLastDisplayedPokemon(updated_list)
 		},
 		displayPreviousList: (state) => {
@@ -93,8 +94,9 @@ const pokemonSlice = createSlice({
 				})
 			}
 			state.pokemon_list = updated_list
-			// state.first_pokemon_being_displayed = updated_list.find(pokemon => pokemon.being_displayed === true)
-			// console.log(previous_pokemon_remaining)
+			state.first_pokemon_being_displayed = updated_list.find(pokemon => pokemon.being_displayed === true)
+			state.last_pokemon_being_displayed = getLastDisplayedPokemon(updated_list)
+			console.log(previous_pokemon_remaining)
 		}
 	},
 	extraReducers: {
@@ -112,6 +114,7 @@ const pokemonSlice = createSlice({
 			})
 			state.is_loading = false
 			state.pokemon_list = final_list
+			state.first_pokemon_being_displayed = final_list.find(pokemon => pokemon.being_displayed === true)
 			state.last_pokemon_being_displayed = getLastDisplayedPokemon(state.pokemon_list)
 		},
 		[fetchPokemonList.rejected]: (state, action) => {
