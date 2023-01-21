@@ -75,6 +75,12 @@ const pokemonSlice = createSlice({
 			}
 			state.pokemon_list = updated_list
 			state.last_pokemon_being_displayed = getLastDisplayedPokemon(updated_list)
+		},
+		displayPreviousList: (state) => {
+			let pokemon_list = state.pokemon_list
+			let first_displayed_pokemon = pokemon_list.find(pokemon => pokemon.being_displayed === true)
+			let previous_pokemon_remaining = pokemon_list.slice(0,pokemon_list.indexOf(first_displayed_pokemon)).length
+			console.log(previous_pokemon_remaining)
 		}
 	},
 	extraReducers: {
@@ -114,7 +120,7 @@ const pokemonSlice = createSlice({
 	}
 })
 
-export const { selectPokemon, removeSelectedPokemon, displayNextList } = pokemonSlice.actions
+export const { selectPokemon, removeSelectedPokemon, displayNextList, displayPreviousList } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
 

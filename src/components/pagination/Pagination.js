@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { displayNextList } from '../../redux/slices/pokemonSlice'
+import { displayNextList, displayPreviousList } from '../../redux/slices/pokemonSlice'
 
 const Pagination = () => {
 	const dispatch = useDispatch()
@@ -13,7 +13,7 @@ const Pagination = () => {
 	}
 
 	const handlePrevBtnClick = () => {
-
+		dispatch(displayPreviousList())
 	}
 	
 	return (
