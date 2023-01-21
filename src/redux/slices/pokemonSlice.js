@@ -126,10 +126,7 @@ const pokemonSlice = createSlice({
 		},
 		[fetchSinglePokemon.fulfilled]: (state, action) => {
 			state.is_loading = false
-			let index = state.pokemon_list.findIndex(pokemon => pokemon.name === action.payload.name)
-			state.pokemon_list[index] = action.payload
 			state.selected_pokemon = action.payload
-			console.log(state.pokemon_list)
 		},
 		[fetchSinglePokemon.rejected]: (state) => {
 			state.is_loading = false
