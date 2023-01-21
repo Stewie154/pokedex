@@ -4,6 +4,7 @@ import axios from 'axios'
 
 const initialState = {
 	pokemon_list: [],
+	first_pokemon_being_displayed: {},
 	last_pokemon_being_displayed: {},
 	is_loading: true,
 	selected_pokemon: null,
@@ -80,7 +81,20 @@ const pokemonSlice = createSlice({
 			let pokemon_list = state.pokemon_list
 			let first_displayed_pokemon = pokemon_list.find(pokemon => pokemon.being_displayed === true)
 			let previous_pokemon_remaining = pokemon_list.slice(0,pokemon_list.indexOf(first_displayed_pokemon)).length
-			console.log(previous_pokemon_remaining)
+			let updated_list
+			if (previous_pokemon_remaining >= 10) {
+				updated_list = pokemon_list.map((pokemon, index) => {
+					if ((index < pokemon_list.indexOf(first_displayed_pokemon)) && (index > pokemon_list.indexOf(first_displayed_pokemon) - 11)) {
+						return {...pokemon, being_displayed: true}
+					}
+					else {
+						return {...pokemon, being_displayed: false}
+					}
+				})
+			}
+			state.pokemon_list = updated_list
+			// state.first_pokemon_being_displayed = updated_list.find(pokemon => pokemon.being_displayed === true)
+			// console.log(previous_pokemon_remaining)
 		}
 	},
 	extraReducers: {
