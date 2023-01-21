@@ -12,7 +12,7 @@ const BackIcon = () => {
 	return (
 		<Link to="/">
 			<img
-				src='/images/arrow-back-outline.svg'
+				src='/images/arrow-light-mode.svg'
 				alt="filter icon"
 				className="w-9 cursor-pointer hover:opacity-50"
 				onClick={() => handleClick()}
