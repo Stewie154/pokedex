@@ -1,9 +1,11 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { removeSelectedPokemon } from '../../../redux/slices/pokemonSlice'
 import { Link } from 'react-router-dom'
 
 const BackIcon = () => {
+	const theme = useSelector(state => state.pokemon.theme)
+
 	const dispatch = useDispatch()
 
 	const handleClick = () => {
@@ -12,7 +14,7 @@ const BackIcon = () => {
 	return (
 		<Link to="/">
 			<img
-				src='/images/icons/arrow-light-mode.svg'
+				src={`/images/icons/arrow-${theme}-mode.svg`}
 				alt="filter icon"
 				className="w-10 top-10 absolute cursor-pointer hover:opacity-50"
 				onClick={() => handleClick()}
