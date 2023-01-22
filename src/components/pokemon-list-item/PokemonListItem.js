@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { fetchSinglePokemon } from '../../redux/slices/pokemonSlice'
 import { useNavigate } from "react-router-dom";
 const PokemonListItem = ({ name, url }) => {
+	const theme = useSelector(state => state.pokemon.theme)
 	const [hovering, setHovering] = useState(false)
 
 	const navigate = useNavigate();
@@ -20,7 +21,7 @@ const PokemonListItem = ({ name, url }) => {
 
 	return (
 		<div
-			className="flex justify-between items-center py-2 cursor-pointer hover:border-b light-mode-border-color-secondary"
+			className={`flex justify-between items-center py-2 cursor-pointer hover:border-b ${theme}-mode-border-color-secondary`}
 			onMouseEnter={() => handleHover()}
 			onMouseLeave={() => handleHover()}
 			onClick={() => handleClick(url, name)}
