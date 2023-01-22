@@ -9,7 +9,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: $font-primary;
-	color: $light-mode-color-secondary;
+	color: $light-mode-color-primary;
 }
 
 body {
@@ -25,14 +25,15 @@ body {
 
 .light-mode-bg-primary {
 	background-color: $light-mode-background-primary;
+	color: $light-mode-color-primary;
 }
 
 .light-mode-bg-secondary {
-	background: $light-mode-color-secondary;
-	color: $light-mode-color-primary;
+	background: $light-mode-color-primary;
+	color: $light-mode-color-secondary;
 	&:hover {
-		background: $light-mode-color-primary;
-		color: $light-mode-color-secondary;
+		background-color: $light-mode-background-primary;
+		color: $light-mode-color-primary;
 	}
 }
 
@@ -41,11 +42,11 @@ body {
 }
 
 .light-mode-border-container {
-	border: 1px solid $light-mode-color-secondary;
+	border: 1px solid $light-mode-color-primary;
 }
 
 .light-mode-border-color-secondary {
-	border-color: $light-mode-color-secondary;
+	border-color: $light-mode-color-primary;
 }
 
 //animations 
