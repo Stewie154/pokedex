@@ -8,7 +8,8 @@ const initialState = {
 	last_pokemon_being_displayed: {},
 	is_loading: true,
 	selected_pokemon: null,
-	error: ''
+	error: '',
+	theme: 'light'
 }
 
 export const fetchPokemonList = createAsyncThunk(
@@ -97,6 +98,10 @@ const pokemonSlice = createSlice({
 			state.first_pokemon_being_displayed = updated_list.find(pokemon => pokemon.being_displayed === true)
 			state.last_pokemon_being_displayed = getLastDisplayedPokemon(updated_list)
 			console.log(previous_pokemon_remaining)
+		},
+		toggleTheme: (state) => {
+			let theme = state.theme === 'light' ? 'dark' : 'light'
+			state.theme = theme
 		}
 	},
 	extraReducers: {
@@ -134,7 +139,7 @@ const pokemonSlice = createSlice({
 	}
 })
 
-export const { selectPokemon, removeSelectedPokemon, displayNextList, displayPreviousList } = pokemonSlice.actions
+export const { selectPokemon, removeSelectedPokemon, displayNextList, displayPreviousList, toggleTheme } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
 
