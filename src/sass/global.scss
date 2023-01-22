@@ -21,7 +21,7 @@
 
 // light mode classes
 
-.light-mode-gradient {
+.light-mode-bg-gradient {
 	background: $light-mode-background-gradient;
 }
 
@@ -39,9 +39,6 @@
 	}
 }
 
-.light-mode-bg-gradient {
-	background: $light-mode-background-gradient;
-}
 
 .light-mode-border-container {
 	border: 1px solid $light-mode-color-primary;
@@ -53,7 +50,7 @@
 
 //dark mode classes
 
-.dark-mode-gradient {
+.dark-mode-bg-gradient {
 	background: $dark-mode-background-gradient;
 }
 
@@ -69,10 +66,6 @@
 		background-color: $dark-mode-background-primary;
 		color: $dark-mode-color-primary;
 	}
-}
-
-.dark-mode-bg-gradient {
-	background: $dark-mode-background-gradient;
 }
 
 .dark-mode-border-container {
