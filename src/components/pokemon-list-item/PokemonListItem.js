@@ -27,7 +27,7 @@ const PokemonListItem = ({ name, url }) => {
 			onClick={() => handleClick(url, name)}
 		>
 			<h2 className="text-xl lg:text-3xl capitalize hover:opacity-50">{name}</h2>
-			<img src='/images/pokeball.png' className={`w-7 transition ease-in-out delay-150 ${hovering && 'pokeball-animation'}`} alt="pokeball" />
+			<img src={`/images/${theme}-mode-ball.png`} className={`w-7 transition ease-in-out delay-150 ${hovering && 'pokeball-animation'}`} alt="pokeball" />
 		</div>
 	)
 }
