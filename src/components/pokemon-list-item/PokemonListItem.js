@@ -21,7 +21,7 @@ const PokemonListItem = ({ name, url }) => {
 
 	return (
 		<div
-			className={`flex justify-between items-center py-2 cursor-pointer hover:border-b ${theme}-mode-border-color-secondary`}
+			className={`flex justify-between items-center py-2 cursor-pointer hover:border-b ${theme}-mode-border-color-secondary transition-all duration-400`}
 			onMouseEnter={() => handleHover()}
 			onMouseLeave={() => handleHover()}
 			onClick={() => handleClick(url, name)}
