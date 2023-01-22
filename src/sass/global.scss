@@ -23,6 +23,8 @@ body {
 	height: 100vh;
 }
 
+// light mode classes
+
 .light-mode-bg-primary {
 	background-color: $light-mode-background-primary;
 	color: $light-mode-color-primary;
@@ -48,6 +50,35 @@ body {
 .light-mode-border-color-secondary {
 	border-color: $light-mode-color-primary;
 }
+
+//dark mode classes
+
+.dark-mode-bg-primary {
+	background-color: $dark-mode-background-primary;
+	color: $dark-mode-color-primary;
+}
+
+.dark-mode-bg-secondary {
+	background: $dark-mode-color-primary;
+	color: $dark-mode-color-secondary;
+	&:hover {
+		background-color: $dark-mode-background-primary;
+		color: $dark-mode-color-primary;
+	}
+}
+
+.dark-mode-bg-gradient {
+	background: $dark-mode-background-gradient;
+}
+
+.dark-mode-border-container {
+	border: 1px solid $dark-mode-color-primary;
+}
+
+.dark-mode-border-color-secondary {
+	border-color: $dark-mode-color-primary;
+}
+
 
 //animations 
 

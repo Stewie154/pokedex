@@ -12,10 +12,10 @@ $light-mode-background-gradient: linear-gradient(to bottom, $light-mode-backgrou
 
 //dark mode
 
-$dark-mode-color-secondary: #000;
-$dark-mode-color-primary: #000;
+$dark-mode-color-secondary: #190404;
+$dark-mode-color-primary: #e9800a;
 
-$dark-mode-background-primary:  #000;
-$dark-mode-background-secondary: #000;
+$dark-mode-background-primary:  #190404;
+$dark-mode-background-secondary: #1c0808;
 
 $dark-mode-background-gradient: linear-gradient(to bottom, $dark-mode-background-primary , $dark-mode-background-secondary 30%);
