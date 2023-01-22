@@ -11,6 +11,10 @@ const App = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
+		dispatch(fetchPokemonList())
+	}, [])
+
+	useEffect(() => {
 		if (pokemon_list === []) {
 			dispatch(fetchPokemonList())
 		}
