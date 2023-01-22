@@ -1,5 +1,7 @@
 $font-primary: 'Edu TAS Beginner', cursive;
 
+//light mode
+
 $light-mode-color-primary: #fb0006;
 $light-mode-color-secondary: #ffffff;
 
@@ -7,3 +9,13 @@ $light-mode-background-primary:  #fb0006;
 $light-mode-background-secondary: #ec3c3f;
 
 $light-mode-background-gradient: linear-gradient(to bottom, $light-mode-background-primary , $light-mode-background-secondary 30%);
+
+//dark mode
+
+$dark-mode-color-primary: #000;
+$dark-mode-color-secondary: #000;
+
+$dark-mode-background-primary:  #000;
+$dark-mode-background-secondary: #000;
+
+$dark-mode-background-gradient: linear-gradient(to bottom, $light-mode-background-primary , $light-mode-background-secondary 30%);
