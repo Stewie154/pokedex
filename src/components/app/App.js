@@ -12,7 +12,7 @@ const App = () => {
 		dispatch(fetchPokemonList())
 	}, [dispatch])
 	return (
-		<div className="container w-full max-w-[700px] h-[90vh] bg-primary px-10 mx-2 sm:mx-10 rounded-lg border-container">
+		<div className="container w-full max-w-[700px] h-[90vh] light-mode-bg-primary px-10 mx-2 sm:mx-10 rounded-lg light-mode-border-container">
 			<RouterComponent />
 			{/* <FormComponent /> */}
 		</div>
