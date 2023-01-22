@@ -6,11 +6,14 @@ import { fetchPokemonList } from '../../redux/slices/pokemonSlice';
 
 const App = () => {
 	const theme = useSelector(state => state.pokemon.theme)
+	const pokemon_list = useSelector(state => state.pokemon.pokemon_list)
 
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		dispatch(fetchPokemonList())
+		if (pokemon_list === []) {
+			dispatch(fetchPokemonList())
+		}
 		document.body.classList.add(`${theme}-mode-bg-gradient`)
 		return () => document.body.classList.remove(`${theme}-mode-bg-gradient`)
 	}, [dispatch, theme])
