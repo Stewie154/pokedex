@@ -28,14 +28,17 @@
 .light-mode-bg-primary {
 	background-color: $light-mode-background-primary;
 	color: $light-mode-color-primary;
+	border: 1px solid $light-mode-color-primary;
 }
 
 .light-mode-bg-secondary {
 	background: $light-mode-color-primary;
 	color: $light-mode-color-secondary;
+	border: 1px solid $light-mode-color-secondary;
 	&:hover {
 		background-color: $light-mode-background-primary;
 		color: $light-mode-color-primary;
+		border-color: $light-mode-color-primary;
 	}
 }
 
@@ -57,14 +60,17 @@
 .dark-mode-bg-primary {
 	background-color: $dark-mode-background-primary;
 	color: $dark-mode-color-primary;
+	border: 1px solid $dark-mode-color-primary;
 }
 
 .dark-mode-bg-secondary {
 	background: $dark-mode-color-primary;
 	color: $dark-mode-color-secondary;
+	border: 1px solid $dark-mode-color-secondary;
 	&:hover {
 		background-color: $dark-mode-background-primary;
 		color: $dark-mode-color-primary;
+		border-color: $dark-mode-color-primary;
 	}
 }
 
