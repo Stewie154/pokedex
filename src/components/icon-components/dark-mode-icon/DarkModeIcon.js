@@ -1,8 +1,12 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleTheme } from '../../../redux/slices/pokemonSlice'
 
 const DarkModeIcon = () => {
+	const dispatch = useDispatch()
+	
 	const handleClick = () => {
-		console.log('hello')
+		dispatch(toggleTheme())
 	}
 	return (
 		<img

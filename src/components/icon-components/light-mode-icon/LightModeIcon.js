@@ -1,9 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleTheme } from '../../../redux/slices/pokemonSlice'
 
 const LightModeIcon = () => {
+	const dispatch = useDispatch()
+	
 	const handleClick = () => {
-		console.log('hello')
+		dispatch(toggleTheme())
 	}
+
 	return (
 		<img
 			src='/images/icons/sunny-outline.svg'
