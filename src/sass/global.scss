@@ -9,12 +9,8 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: $font-primary;
-	color: $light-mode-color-primary;
 }
 
-body {
-	background: $light-mode-background-gradient;
-}
 
 #root {
 	display: flex;
@@ -24,6 +20,10 @@ body {
 }
 
 // light mode classes
+
+.light-mode-gradient {
+	background: $light-mode-background-gradient;
+}
 
 .light-mode-bg-primary {
 	background-color: $light-mode-background-primary;
@@ -52,6 +52,10 @@ body {
 }
 
 //dark mode classes
+
+.dark-mode-gradient {
+	background: $dark-mode-background-gradient;
+}
 
 .dark-mode-bg-primary {
 	background-color: $dark-mode-background-primary;

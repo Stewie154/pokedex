@@ -10,9 +10,10 @@ const App = () => {
 
 	useEffect(() => {
 		dispatch(fetchPokemonList())
+		document.body.classList.add('dark-mode-gradient')
 	}, [dispatch])
 	return (
-		<div className="container w-full max-w-[700px] h-[90vh] light-mode-bg-primary px-10 mx-2 sm:mx-10 rounded-lg light-mode-border-container">
+		<div className="container w-full max-w-[700px] h-[90vh] dark-mode-bg-primary px-10 mx-2 sm:mx-10 rounded-lg dark-mode-border-container">
 			<RouterComponent />
 			{/* <FormComponent /> */}
 		</div>
