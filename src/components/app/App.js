@@ -13,6 +13,7 @@ const App = () => {
 	useEffect(() => {
 		dispatch(fetchPokemonList())
 		document.body.classList.add(`${theme}-mode-bg-gradient`)
+		return () => document.body.classList.remove(`${theme}-mode-bg-gradient`)
 	}, [dispatch, theme])
 	return (
 		<div className={`container w-full max-w-[700px] h-[90vh] ${theme}-mode-bg-primary px-10 mx-2 sm:mx-10 rounded-lg ${theme}-mode-border-container`}>
