@@ -21,13 +21,14 @@ const PokemonListItem = ({ name, url }) => {
 
 	return (
 		<div
-			className={`flex justify-between items-center py-2 cursor-pointer hover:border-b ${theme}-mode-border-color-secondary transition-all duration-400`}
+			className={`relative flex justify-between items-center py-2 cursor-pointer group transition-all duration-400`}
 			onMouseEnter={() => handleHover()}
 			onMouseLeave={() => handleHover()}
 			onClick={() => handleClick(url, name)}
 		>
 			<h2 className="text-xl lg:text-3xl capitalize hover:opacity-50">{name}</h2>
 			<img src={`/images/${theme}-mode-ball.png`} className={`w-7 transition ease-in-out delay-150 ${hovering && 'pokeball-animation'}`} alt="pokeball" />
+			<div className={`absolute bottom-0 h-px w-0 ${theme}-mode-border-color-secondary group-hover:w-full group-hover:border-b transition-all duration-500`}></div>
 		</div>
 	)
 }
