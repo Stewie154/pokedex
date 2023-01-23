@@ -21,7 +21,7 @@ const PokemonListItem = ({ name, url }) => {
 
 	return (
 		<div
-			className={`relative flex justify-between items-center py-2 cursor-pointer group transition-all duration-400`}
+			className={`relative flex justify-between items-center py-2 cursor-pointer group transition-all duration-300`}
 			onMouseEnter={() => handleHover()}
 			onMouseLeave={() => handleHover()}
 			onClick={() => handleClick(url, name)}
