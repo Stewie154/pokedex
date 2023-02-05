@@ -23,7 +23,7 @@ const PokemonScreen = () => {
 	}
 
 	return (
-		<div className="relative h-5/6 overflow-scroll py-5">
+		<div className="relative h-5/6 flex flex-col overflow-scroll py-5">
 			<BackIcon />
 			<section className="w-full flex flex-row-reverse justify-between mt-14">
 				<div
@@ -41,11 +41,12 @@ const PokemonScreen = () => {
 				</div>
 			</section>
 			
-				<div className='w-full mt-10 flex flex-wrap items-center justify-center'>
-					<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3 border-t ${theme}-mode-border-color-secondary`}>
-						{renderStats(stats)}
-					</div>
+			<section className={`w-full mt-5 pt-5 flex-grow flex flex-wrap items-start border-t ${theme}-mode-border-color-secondary`}>
+				<h3 className="w-full capitalize text-2xl sm:text-3xl text-center">Stats</h3>
+				<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
+					{renderStats(stats)}
 				</div>
+			</section>
 			
 		</div>
 	)
