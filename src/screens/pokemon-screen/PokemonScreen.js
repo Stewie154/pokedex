@@ -9,14 +9,14 @@ const PokemonScreen = () => {
 
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
-			return <p className="mb-3 text-2xl uppercase text-center w-full w-6/12" key={key}>{type_item.type.name}</p>
+			return <p className="mb-3 text-sm sm:text-2xl uppercase text-center w-full w-6/12" key={key}>{type_item.type.name}</p>
 		})
 	}
 
 	const renderStats = (stats) => {
 		return stats.map((stat, key) => {
 			return (
-				<p className="mb-3 text-2xl uppercase text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
+				<p className="mb-3 text-sm sm:text-xl uppercase text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
 			)
 		})
 	}
@@ -32,12 +32,13 @@ const PokemonScreen = () => {
 				>
 				</div>
 				<div className='w-full mt-10 flex flex-wrap items-center justify-center'>
-					<div className="w-full flex flex-wrap justify-center items-center">
+					<div className="w-full flex flex-wrap justify-center items-center mb-3">
 						{renderTypes(types)}
 					</div>
-					<p className="mb-3 text-2xl text-center w-full sm:w-6/12">Height: {height * 10} cm</p>
-					<p className="mb-3 text-2xl text-center w-full sm:w-6/12">Weight: {weight / 10} kg</p>
-					<div className="w-full flex flex-wrap justify-around items-center">
+					<p className="mb-3 sm:text-xl text-center w-full w-6/12">Height: {height * 10} cm</p>
+					<p className="mb-3 sm:text-xl text-center w-full w-6/12">Weight: {weight / 10} kg</p>
+					<p className="mb-3 text-lg sm:text-xl text-center w-full">STATS:</p>
+					<div className="w-full grid grid-cols-2 md:grid-cols-3 gap-3">
 						{renderStats(stats)}
 					</div>
 				</div>
