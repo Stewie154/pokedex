@@ -28,7 +28,7 @@ const PokemonScreen = () => {
 				<h2 className='capitalize underline text-4xl text-center mb-10'>{name}</h2>
 				<div
 					style={{ backgroundImage: `url(${image})` }}
-					className="w-full md:w-6/12 pb-[75%] sm:pb-[45%] bg-center bg-contain bg-no-repeat"
+					className="w-full md:w-6/12 pb-[75%] sm:pb-[40%] bg-center bg-contain bg-no-repeat"
 				>
 				</div>
 				<div className='w-full mt-10 flex flex-wrap items-center justify-center'>
@@ -37,13 +37,11 @@ const PokemonScreen = () => {
 					</div>
 					<p className="mb-3 sm:text-xl text-center w-full w-6/12">Height: {height * 10} cm</p>
 					<p className="mb-3 sm:text-xl text-center w-full w-6/12">Weight: {weight / 10} kg</p>
-					<p className="mb-3 text-lg sm:text-xl text-center w-full">STATS:</p>
-					<div className="w-full grid grid-cols-2 md:grid-cols-3 gap-3">
+					<div className="w-full grid grid-cols-2 md:grid-cols-3 gap-3 border-t">
 						{renderStats(stats)}
 					</div>
 				</div>
 			</section>
-
 		</div>
 	)
 }
