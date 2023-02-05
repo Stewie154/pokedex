@@ -4,6 +4,7 @@ import BackIcon from '../../components/icon-components/back-icon/BackIcon'
 
 const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
+	const theme = useSelector(state => state.pokemon.theme)
 	const { name, height, weight, types, stats } = selected_pokemon
 	const image = selected_pokemon.sprites.other.dream_world.front_default
 
@@ -41,7 +42,7 @@ const PokemonScreen = () => {
 			</section>
 			
 				<div className='w-full mt-10 flex flex-wrap items-center justify-center'>
-					<div className="w-full grid grid-cols-2 md:grid-cols-3 gap-3 border-t">
+					<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3 border-t ${theme}-mode-border-color-secondary`}>
 						{renderStats(stats)}
 					</div>
 				</div>
