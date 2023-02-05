@@ -21,7 +21,7 @@ const PokemonListItem = ({ name, url, fadeDelay }) => {
 	}
 
 	return (
-		<Fade delay={fadeDelay}>
+		<Fade top delay={fadeDelay}>
 			<div
 				className={`relative flex justify-between items-center py-2 cursor-pointer group transition-all duration-300`}
 				onMouseEnter={() => handleHover()}
