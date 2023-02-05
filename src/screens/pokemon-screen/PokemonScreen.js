@@ -17,7 +17,7 @@ const PokemonScreen = () => {
 	const renderStats = (stats) => {
 		return stats.map((stat, key) => {
 			return (
-				<p className="mb-3 text-sm sm:text-xl uppercase text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
+				<p className="mb-3 text-sm sm:text-xl capitalize text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
 			)
 		})
 	}
