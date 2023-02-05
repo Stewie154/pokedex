@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Fade from 'react-reveal/Fade';
 import { fetchSinglePokemon } from '../../redux/slices/pokemonSlice'
 import { useNavigate } from "react-router-dom";
-const PokemonListItem = ({ name, url }) => {
+const PokemonListItem = ({ name, url, fadeDelay }) => {
 	const theme = useSelector(state => state.pokemon.theme)
 	const [hovering, setHovering] = useState(false)
 
@@ -21,7 +21,7 @@ const PokemonListItem = ({ name, url }) => {
 	}
 
 	return (
-		<Fade>
+		<Fade delay={fadeDelay}>
 			<div
 				className={`relative flex justify-between items-center py-2 cursor-pointer group transition-all duration-300`}
 				onMouseEnter={() => handleHover()}
