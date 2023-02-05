@@ -24,13 +24,17 @@ const PokemonScreen = () => {
 	return (
 		<div className="relative h-5/6 overflow-scroll py-5">
 			<BackIcon />
-			<section className='w-full flex flex-col justify-between items-center mt-5'>
-				<h2 className='capitalize underline text-4xl text-center mb-10'>{name}</h2>
+			<section className="w-full flex justify-between items-center mt-5">
 				<div
 					style={{ backgroundImage: `url(${image})` }}
 					className="w-full md:w-6/12 pb-[75%] sm:pb-[40%] bg-center bg-contain bg-no-repeat"
 				>
 				</div>
+				<div className="flex flex-grow flex-col justify-start">
+					<h2 className='capitalize underline text-4xl text-center mb-10'>{name}</h2>
+				</div>
+			</section>
+			
 				<div className='w-full mt-10 flex flex-wrap items-center justify-center'>
 					<div className="w-full flex flex-wrap justify-center items-center mb-3">
 						{renderTypes(types)}
@@ -41,7 +45,7 @@ const PokemonScreen = () => {
 						{renderStats(stats)}
 					</div>
 				</div>
-			</section>
+			
 		</div>
 	)
 }
