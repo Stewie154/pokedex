@@ -41,8 +41,8 @@ const PokemonScreen = () => {
 				</div>
 			</section>
 			
-			<section className={`w-full mt-5 pt-5 flex-grow flex flex-wrap items-start border-t ${theme}-mode-border-color-secondary`}>
-				<h3 className="w-full capitalize text-2xl sm:text-3xl text-center">Stats</h3>
+			<section className={`w-full mt-5 pt-5 flex-grow border-t ${theme}-mode-border-color-secondary`}>
+				<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-5">Stats</h3>
 				<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
 					{renderStats(stats)}
 				</div>
