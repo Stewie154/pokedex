@@ -4,12 +4,20 @@ import BackIcon from '../../components/icon-components/back-icon/BackIcon'
 
 const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
-	const { name, height, weight, types } = selected_pokemon
+	const { name, height, weight, types, stats } = selected_pokemon
 	const image = selected_pokemon.sprites.other.dream_world.front_default
 
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
 			return <p className="mb-3 text-2xl uppercase text-center w-full w-6/12" key={key}>{type_item.type.name}</p>
+		})
+	}
+
+	const renderStats = (stats) => {
+		return stats.map((stat, key) => {
+			return (
+				<p className="mb-3 text-2xl uppercase text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
+			)
 		})
 	}
 
@@ -29,6 +37,9 @@ const PokemonScreen = () => {
 					</div>
 					<p className="mb-3 text-2xl text-center w-full sm:w-6/12">Height: {height * 10} cm</p>
 					<p className="mb-3 text-2xl text-center w-full sm:w-6/12">Weight: {weight / 10} kg</p>
+					<div className="w-full flex flex-wrap justify-around items-center">
+						{renderStats(stats)}
+					</div>
 				</div>
 			</section>
 
