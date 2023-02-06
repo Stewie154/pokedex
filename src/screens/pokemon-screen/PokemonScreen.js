@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import BackIcon from '../../components/icon-components/back-icon/BackIcon'
 import CycleBackIcon from '../../components/icon-components/cycle-back-icon/CycleBackIcon'
+import CycleForwardIcon from '../../components/icon-components/cycle-forward-icon/CycleForwardIcon'
 
 const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
@@ -49,6 +50,7 @@ const PokemonScreen = () => {
 			</section>
 			<section className="absolute bottom-0 w-full flex justify-center items-center">
 				<CycleBackIcon />
+				<CycleForwardIcon />
 			</section>
 		</div>
 	)

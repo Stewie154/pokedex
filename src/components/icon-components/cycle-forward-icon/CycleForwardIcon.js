@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-const CycleBackIcon = () => {
+const CycleForwardIcon = () => {
 	const theme = useSelector(state => state.pokemon.theme)
 
 	const dispatch = useDispatch()
@@ -15,10 +15,10 @@ const CycleBackIcon = () => {
 		<img
 			src={`/images/icons/arrow-${theme}-mode.svg`}
 			alt="filter icon"
-			className="w-10 mr-5 cursor-pointer hover:opacity-50 transition-all duration-300"
+			className="w-10 ml-5 cursor-pointer hover:opacity-50 transition-all duration-300 rotate-180"
 			onClick={() => handleClick()}
 		/>
 	)
 }
 
-export default CycleBackIcon
+export default CycleForwardIcon
