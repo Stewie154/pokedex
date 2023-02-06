@@ -12,13 +12,15 @@ const BackIcon = () => {
 		dispatch(removeSelectedPokemon())
 	}
 	return (
-		<Link to="/">
-			<img
-				src={`/images/icons/arrow-${theme}-mode.svg`}
-				alt="filter icon"
-				className="w-10 mb-5 cursor-pointer hover:opacity-50 transition-all duration-300"
-				onClick={() => handleClick()}
-			/>
+		<Link to="/" className="w-fit">
+			<div className="flex group items-center mb-5 cursor-pointer hover:opacity-70" onClick={() => handleClick()}>
+				<img
+					src={`/images/icons/arrow-${theme}-mode.svg`}
+					alt="filter icon"
+					className="w-5 mr-3"
+				/>
+				<p className="group-hover:underline">Back to List</p>
+			</div>
 		</Link>
 
 	)
