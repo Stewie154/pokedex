@@ -25,12 +25,12 @@ const PokemonScreen = () => {
 	}
 
 	return (
-		<div className="relative h-5/6 flex flex-col overflow-scroll py-5">
+		<div className="relative h-[90%] flex flex-col overflow-scroll pt-5">
 			<BackIcon />
 			<section className="w-full flex flex-row-reverse justify-between mt-14">
 				<div
 					style={{ backgroundImage: `url(${image})` }}
-					className="w-full md:w-6/12 pb-[75%] sm:pb-[40%] bg-center bg-contain bg-no-repeat"
+					className="w-full md:w-6/12 pb-[75%] sm:pb-[50%] bg-center bg-contain bg-no-repeat"
 				>
 				</div>
 				<div className="flex flex-grow flex-col justify-between">
