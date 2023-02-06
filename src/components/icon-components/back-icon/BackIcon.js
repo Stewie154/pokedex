@@ -16,7 +16,7 @@ const BackIcon = () => {
 			<img
 				src={`/images/icons/arrow-${theme}-mode.svg`}
 				alt="filter icon"
-				className="w-10 cursor-pointer hover:opacity-50 transition-all duration-300"
+				className="w-10 mb-5 cursor-pointer hover:opacity-50 transition-all duration-300"
 				onClick={() => handleClick()}
 			/>
 		</Link>

@@ -25,33 +25,38 @@ const PokemonScreen = () => {
 	}
 
 	return (
-		<div className="relative h-[90%] flex flex-col overflow-scroll pt-3">
+		<div className="relative h-[90%] flex flex-col overflow-scroll pt-5">
 			<section className="w-full flex flex-row-reverse justify-between">
 				<div
 					style={{ backgroundImage: `url(${image})` }}
-					className="w-full md:w-6/12 pb-[75%] sm:pb-[50%] bg-center bg-contain bg-no-repeat"
+					className="w-full md:w-6/12 pb-[75%] sm:pb-[55%] bg-center bg-contain bg-no-repeat"
 				>
 				</div>
 				<div className="flex flex-grow flex-col justify-start">
 					<BackIcon />
-					<h2 className="capitalize underline text-4xl text-left mb-7">{name}</h2>
-					<div className="w-full flex items-center">
-						{renderTypes(types)}
+					<div>
+						<h2 className="capitalize underline text-4xl text-left mb-7">{name}</h2>
+						<div className="w-full flex items-center">
+							{renderTypes(types)}
+						</div>
+						<p className="mb-3 sm:text-xl text-left w-full">Height: {height * 10} cm</p>
+						<p className="mb-3 sm:text-xl text-left w-full">Weight: {weight / 10} kg</p>
 					</div>
-					<p className="mb-3 sm:text-xl text-left w-full">Height: {height * 10} cm</p>
-					<p className="mb-3 sm:text-xl text-left w-full">Weight: {weight / 10} kg</p>
 				</div>
 			</section>
-			<section className={`w-full mt-5 pt-5 flex-grow border-t ${theme}-mode-border-color-secondary`}>
-				<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-5">Stats</h3>
-				<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
-					{renderStats(stats)}
+			<section className={`w-full mt-5 pt-5 flex-grow flex flex-col justify-around border-t ${theme}-mode-border-color-secondary`}>
+				<div>
+					<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-5">Stats</h3>
+					<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
+						{renderStats(stats)}
+					</div>
+				</div>
+				<div className="w-full flex justify-center items-center">
+					<CycleBackIcon />
+					<CycleForwardIcon />
 				</div>
 			</section>
-			<section className="absolute bottom-0 w-full flex justify-center items-center">
-				<CycleBackIcon />
-				<CycleForwardIcon />
-			</section>
+			
 		</div>
 	)
 }
