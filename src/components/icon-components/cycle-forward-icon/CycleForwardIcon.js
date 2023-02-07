@@ -9,12 +9,12 @@ const CycleForwardIcon = () => {
 	const selected_pokemon = useSelector(state => state.pokemon.selected_pokemon)
 	const dispatch = useDispatch()
 
-	const handleClick = () => {
+	const handleClick = async () => {
 		// dispatch()
 		let current_list_item = pokemon_list.find(pokemon => pokemon.name === selected_pokemon.name)
 		let current_list_item_index = pokemon_list.indexOf(current_list_item)
-		console.log(current_list_item_index)
-		
+		let next_pokemon = pokemon_list[current_list_item_index + 1]
+	
 	}
 	return (
 		<img
