@@ -30,7 +30,7 @@ const CycleForwardIcon = () => {
 		<img
 			src={`/images/icons/arrow-${theme}-mode.svg`}
 			alt="filter icon"
-			className="w-10 ml-5 cursor-pointer hover:opacity-50 transition-all duration-300 rotate-180"
+			className={`w-10 ml-5 rotate-180 ${!getNextPokemon() ? 'opacity-20 cursor-not-allowed' : 'cursor-pointer hover:opacity-50 transition-all duration-300'}`}
 			onClick={() => handleClick()}
 		/>
 	)
