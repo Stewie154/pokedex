@@ -11,10 +11,15 @@ const CycleBackIcon = () => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate();
 
-	const handleClick = async () => {
+	const getPreviousPokemon = () => {
 		let current_list_item = pokemon_list.find(pokemon => pokemon.name === selected_pokemon.name)
 		let current_list_item_index = pokemon_list.indexOf(current_list_item)
 		let previous_pokemon = pokemon_list[current_list_item_index - 1]
+		return previous_pokemon
+	}
+
+	const handleClick = async () => {
+		let previous_pokemon = getPreviousPokemon()
 		if (previous_pokemon) {
 			await dispatch(fetchSinglePokemon(previous_pokemon.url))
 			navigate(`/${previous_pokemon.name}`)
@@ -25,7 +30,7 @@ const CycleBackIcon = () => {
 		<img
 			src={`/images/icons/arrow-${theme}-mode.svg`}
 			alt="filter icon"
-			className="w-10 mr-5 cursor-pointer hover:opacity-50 transition-all duration-300"
+			className={`w-10 mr-5 cursor-pointer hover:opacity-50 transition-all duration-300`}
 			onClick={() => handleClick()}
 		/>
 	)
