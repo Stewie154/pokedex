@@ -10,16 +10,22 @@ const CycleForwardIcon = () => {
 	const dispatch = useDispatch()
 	const navigate = useNavigate();
 
-	const handleClick = async () => {
+	const getNextPokemon = () => {
 		let current_list_item = pokemon_list.find(pokemon => pokemon.name === selected_pokemon.name)
 		let current_list_item_index = pokemon_list.indexOf(current_list_item)
 		let next_pokemon = pokemon_list[current_list_item_index + 1]
+		return next_pokemon
+	}
+
+	const handleClick = async () => {
+		let next_pokemon = getNextPokemon()
 		if (next_pokemon) {
+			console.log('fired here')
 			await dispatch(fetchSinglePokemon(next_pokemon.url))
 			navigate(`/${next_pokemon.name}`)
 		}
 	}
-	
+
 	return (
 		<img
 			src={`/images/icons/arrow-${theme}-mode.svg`}
