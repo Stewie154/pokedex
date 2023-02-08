@@ -20,7 +20,6 @@ const CycleForwardIcon = () => {
 	const handleClick = async () => {
 		let next_pokemon = getNextPokemon()
 		if (next_pokemon) {
-			console.log('fired here')
 			await dispatch(fetchSinglePokemon(next_pokemon.url))
 			navigate(`/${next_pokemon.name}`)
 		}
