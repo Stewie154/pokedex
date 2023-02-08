@@ -5,6 +5,7 @@ import CycleBackIcon from '../../components/icon-components/cycle-back-icon/Cycl
 import CycleForwardIcon from '../../components/icon-components/cycle-forward-icon/CycleForwardIcon'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import { Fade } from 'react-reveal'
+import { Zoom } from 'react-reveal'
 
 const PokemonScreen = () => {
 	const is_loading = useSelector(state => state.pokemon.is_loading)
@@ -34,13 +35,13 @@ const PokemonScreen = () => {
 			<Fade>
 				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-5'}`}>
 					<section className="w-full flex flex-row-reverse justify-between">
-
-						<div
-							style={{ backgroundImage: `url(${image})` }}
-							className="w-full md:w-6/12 pb-[75%] sm:pb-[55%] bg-center bg-contain bg-no-repeat"
-						>
-						</div>
-
+						<Zoom>
+							<div
+								style={{ backgroundImage: `url(${image})` }}
+								className="w-full md:w-6/12 pb-[75%] sm:pb-[55%] bg-center bg-contain bg-no-repeat"
+							>
+							</div>
+						</Zoom>
 						<div className="flex flex-grow flex-col justify-start">
 							<BackIcon />
 							<div>
