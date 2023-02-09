@@ -11,9 +11,12 @@ const App = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		if (pokemon_list === []) {
+		if (pokemon_list.length === 0) {
 			dispatch(fetchPokemonList())
 		}
+	}, [])
+
+	useEffect(() => {
 		document.body.classList.add(`${theme}-mode-bg-gradient`)
 		return () => document.body.classList.remove(`${theme}-mode-bg-gradient`)
 	}, [dispatch, theme])
