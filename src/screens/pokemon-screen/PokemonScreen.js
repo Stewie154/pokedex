@@ -34,7 +34,7 @@ const PokemonScreen = () => {
 			{is_loading && <LoadingSpinner />}
 			<Fade>
 				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-5'}`}>
-					<section className="w-full flex flex-row-reverse justify-between">
+					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
 						<Zoom>
 							<div
 								style={{ backgroundImage: `url(${image})` }}
@@ -42,10 +42,10 @@ const PokemonScreen = () => {
 							>
 							</div>
 						</Zoom>
-						<div className="flex flex-grow flex-col justify-start">
+						<div className="flex flex-grow md:flex-col md:justify-start">
 							<BackIcon />
 							<div>
-								<h2 className="capitalize underline text-4xl text-left mb-6">{name}</h2>
+								<h2 className="capitalize  underline text-4xl text-left mb-6">{name}</h2>
 								<div className="flex items-center">
 									{renderTypes(types)}
 								</div>
