@@ -42,7 +42,7 @@ const PokemonScreen = () => {
 							>
 							</div>
 						</Zoom>
-						<div className="flex flex-grow md:flex-col md:justify-start">
+						<div className="flex flex-grow md:flex-col justify-center md:justify-start">
 							<BackIcon />
 							<div>
 								<h2 className="capitalize  underline text-4xl text-left mb-6">{name}</h2>
