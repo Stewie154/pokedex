@@ -36,21 +36,32 @@ const PokemonScreen = () => {
 				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-5'}`}>
 					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
 						<Zoom>
-							<div
-								style={{ backgroundImage: `url(${image})` }}
-								className="w-full md:w-6/12 pb-[75%] sm:pb-[55%] bg-center bg-contain bg-no-repeat"
-							>
+							<div className="w-full md:w-6/12">
+								<section
+									style={{ backgroundImage: `url(${image})` }}
+									className="w-full pb-[75%] sm:pb-[100%] bg-center bg-contain bg-no-repeat"
+								>
+								</section>
+								<div className="md:hidden flex flex-col items-center">
+									<div className="flex items-center">
+											{renderTypes(types)}
+									</div>
+									<div className="w-full flex justify-evenly">
+										<p className="mb-3 sm:text-xl text-center">Height: {height * 10} cm</p>
+										<p className="mb-3 sm:text-xl text-center">Weight: {weight / 10} kg</p>
+									</div>
+								</div>
 							</div>
 						</Zoom>
 						<div className="flex flex-grow md:flex-col justify-center md:justify-start">
 							<BackIcon />
 							<div>
 								<h2 className="capitalize  underline text-4xl text-left mb-6">{name}</h2>
-								<div className="flex items-center">
+								<div className="hidden md:block flex items-center">
 									{renderTypes(types)}
 								</div>
-								<p className="mb-3 sm:text-xl text-left w-full">Height: {height * 10} cm</p>
-								<p className="mb-3 sm:text-xl text-left w-full">Weight: {weight / 10} kg</p>
+								<p className="hidden md:block mb-3 sm:text-xl text-left w-full">Height: {height * 10} cm</p>
+								<p className="hidden md:block mb-3 sm:text-xl text-left w-full">Weight: {weight / 10} kg</p>
 							</div>
 						</div>
 					</section>
