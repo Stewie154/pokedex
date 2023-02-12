@@ -9,7 +9,7 @@ const Footer = () => {
 
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
 	const theme = useSelector(state => state.pokemon.theme)
-	
+	const is_loading = useSelector(state => state.pokemon.is_loading)
 	
 	
 	const renderContent = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
 	}
 
 	return (
-		<div className={`w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}>
+		<div className={`${is_loading ? 'hidden' : `w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}`}>
 			{renderContent()}
 		</div>
 	)
