@@ -97,7 +97,6 @@ const pokemonSlice = createSlice({
 			state.pokemon_list = updated_list
 			state.first_pokemon_being_displayed = updated_list.find(pokemon => pokemon.being_displayed === true)
 			state.last_pokemon_being_displayed = getLastDisplayedPokemon(updated_list)
-			console.log(previous_pokemon_remaining)
 		},
 		toggleTheme: (state) => {
 			let theme = state.theme === 'light' ? 'dark' : 'light'
