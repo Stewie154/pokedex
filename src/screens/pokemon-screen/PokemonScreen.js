@@ -33,26 +33,25 @@ const PokemonScreen = () => {
 			<Fade>
 				<div className={`${is_loading ? 'hidden' : 'relative h-[80%] flex flex-col overflow-scroll pt-10 md:pt-5'}`}>
 					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
-						
-							<div className="w-full md:w-6/12">
-								<Zoom>
-									<section
-										style={{ backgroundImage: `url(${image})` }}
-										className="w-full pb-[75%] sm:pb-[40%] md:pb-[100%] mb-3 md:mb-0 bg-center bg-contain bg-no-repeat"
-									>
-									</section>
-								</Zoom>
-								<div className="md:hidden flex flex-col items-center">
-									<div className="w-full flex items-center justify-evenly">
-											{renderTypes(types)}
-									</div>
-									<div className="w-full flex justify-evenly">
-										<p className="sm:text-lg md:text-xl text-center">Height: {height * 10} cm</p>
-										<p className="sm:text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
-									</div>
+						<div className="w-full md:w-6/12">
+							<Zoom>
+								<section
+									style={{ backgroundImage: `url(${image})` }}
+									className="w-full pb-[75%] sm:pb-[40%] md:pb-[100%] mb-3 md:mb-0 bg-center bg-contain bg-no-repeat"
+								>
+								</section>
+							</Zoom>
+							<div className="md:hidden flex flex-col items-center">
+								<div className="w-full flex items-center justify-evenly">
+									{renderTypes(types)}
+								</div>
+								<div className="w-full flex justify-evenly">
+									<p className="sm:text-lg md:text-xl text-center">Height: {height * 10} cm</p>
+									<p className="sm:text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
 								</div>
 							</div>
-						
+						</div>
+
 						<div className="flex flex-grow md:flex-col justify-center md:justify-start">
 							<BackIcon />
 							<div>
@@ -66,10 +65,10 @@ const PokemonScreen = () => {
 						</div>
 					</section>
 					<section className={`w-full mt-5 py-3 sm:py-5 flex-grow flex flex-col justify-evenly border-t ${theme}-mode-border-color-secondary`}>
-							<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-2 md:mb-5">Stats</h3>
-							<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
-								{renderStats(stats)}
-							</div>
+						<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-2 md:mb-5">Stats</h3>
+						<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
+							{renderStats(stats)}
+						</div>
 					</section>
 				</div>
 			</Fade>
