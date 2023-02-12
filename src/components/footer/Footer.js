@@ -1,9 +1,10 @@
 import React from 'react'
+import Pagination from '../pagination/Pagination'
 
 const Footer = () => {
 	return (
-		<div className="h-[10%]">
-			Footer Here
+		<div className="w-full h-[10%]">
+			<Pagination />
 		</div>
 	)
 }
