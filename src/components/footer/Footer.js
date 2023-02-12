@@ -8,7 +8,8 @@ import CycleBackIcon from '../icon-components/cycle-back-icon/CycleBackIcon'
 const Footer = () => {
 
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
-
+	const theme = useSelector(state => state.pokemon.theme)
+	
 	
 	
 	const renderContent = () => {
@@ -17,7 +18,7 @@ const Footer = () => {
 		}
 		else {
 			return (
-				<div className="w-full flex justify-center items-center">
+				<div className="w-full h-full flex justify-center items-center">
 					<CycleBackIcon />
 					<CycleForwardIcon />
 				</div>
@@ -26,7 +27,7 @@ const Footer = () => {
 	}
 
 	return (
-		<div className="w-full h-[10%]">
+		<div className={`w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}>
 			{renderContent()}
 		</div>
 	)
