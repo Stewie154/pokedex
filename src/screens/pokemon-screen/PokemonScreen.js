@@ -40,7 +40,7 @@ const PokemonScreen = () => {
 								<Zoom>
 									<section
 										style={{ backgroundImage: `url(${image})` }}
-										className="w-full pb-[75%] sm:pb-[40%] md:pb-[100%] bg-center bg-contain bg-no-repeat"
+										className="w-full pb-[75%] sm:pb-[40%] md:pb-[100%] mb-3 md:mb-0 bg-center bg-contain bg-no-repeat"
 									>
 									</section>
 								</Zoom>
