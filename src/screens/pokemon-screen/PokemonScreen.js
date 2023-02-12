@@ -16,14 +16,14 @@ const PokemonScreen = () => {
 
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
-			return <p className="mb-3 text-sm sm:text-2xl capitalize text-left mr-6" key={key}>{type_item.type.name}</p>
+			return <p className="mb-1 md:mb-3 text-sm sm:text-2xl capitalize text-left mr-6" key={key}>{type_item.type.name}</p>
 		})
 	}
 
 	const renderStats = (stats) => {
 		return stats.map((stat, key) => {
 			return (
-				<p className="mb-3 text-sm text-lg md:text-xl capitalize text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
+				<p className="md:mb-3 text-sm text-lg md:text-xl capitalize text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
 			)
 		})
 	}
@@ -40,7 +40,7 @@ const PokemonScreen = () => {
 								<Zoom>
 									<section
 										style={{ backgroundImage: `url(${image})` }}
-										className="w-full pb-[75%] sm:pb-[50%] md:pb-[100%] bg-center bg-contain bg-no-repeat"
+										className="w-full pb-[75%] sm:pb-[40%] md:pb-[100%] bg-center bg-contain bg-no-repeat"
 									>
 									</section>
 								</Zoom>
@@ -49,8 +49,8 @@ const PokemonScreen = () => {
 											{renderTypes(types)}
 									</div>
 									<div className="w-full flex justify-evenly">
-										<p className="mb-3 text-lg md:text-xl text-center">Height: {height * 10} cm</p>
-										<p className="mb-3 text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
+										<p className="text-lg md:text-xl text-center">Height: {height * 10} cm</p>
+										<p className="text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
 									</div>
 								</div>
 							</div>
@@ -58,7 +58,7 @@ const PokemonScreen = () => {
 						<div className="flex flex-grow md:flex-col justify-center md:justify-start">
 							<BackIcon />
 							<div>
-								<h2 className="capitalize  underline text-2xl md:text-4xl text-left mb-6">{name}</h2>
+								<h2 className="capitalize  underline text-2xl md:text-4xl text-left mb-2 md:mb-6">{name}</h2>
 								<div className="hidden md:block flex items-center">
 									{renderTypes(types)}
 								</div>
@@ -69,7 +69,7 @@ const PokemonScreen = () => {
 					</section>
 					<section className={`w-full mt-5 flex-grow flex flex-col justify-evenly border-t ${theme}-mode-border-color-secondary`}>
 						<div>
-							<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-5">Stats</h3>
+							<h3 className="w-full capitalize text-2xl sm:text-3xl text-center mb-2 md:mb-5">Stats</h3>
 							<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
 								{renderStats(stats)}
 							</div>
