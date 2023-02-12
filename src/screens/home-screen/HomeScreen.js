@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import PokemonListItem from '../../components/pokemon-list-item/PokemonListItem'
 
-
 const HomeScreen = () => {
 
 	const { pokemon_list, is_loading } = useSelector(store => store.pokemon)
@@ -29,7 +28,6 @@ const HomeScreen = () => {
 				{renderPokemon()}
 			</div>
 		</>
-		
 	)
 }
 

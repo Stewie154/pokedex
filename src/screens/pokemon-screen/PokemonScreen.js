@@ -1,8 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import BackIcon from '../../components/icon-components/back-icon/BackIcon'
-import CycleBackIcon from '../../components/icon-components/cycle-back-icon/CycleBackIcon'
-import CycleForwardIcon from '../../components/icon-components/cycle-forward-icon/CycleForwardIcon'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import { Fade } from 'react-reveal'
 import { Zoom } from 'react-reveal'
@@ -33,7 +31,7 @@ const PokemonScreen = () => {
 		<>
 			{is_loading && <LoadingSpinner />}
 			<Fade>
-				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-10 md:pt-5'}`}>
+				<div className={`${is_loading ? 'hidden' : 'relative h-[80%] flex flex-col overflow-scroll pt-10 md:pt-5'}`}>
 					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
 						
 							<div className="w-full md:w-6/12">
@@ -73,10 +71,6 @@ const PokemonScreen = () => {
 							<div className={`w-full grid grid-cols-2 md:grid-cols-3 gap-3`}>
 								{renderStats(stats)}
 							</div>
-						</div>
-						<div className="w-full flex justify-center items-center">
-							<CycleBackIcon />
-							<CycleForwardIcon />
 						</div>
 					</section>
 				</div>
