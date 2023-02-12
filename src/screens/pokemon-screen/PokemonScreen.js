@@ -49,8 +49,8 @@ const PokemonScreen = () => {
 											{renderTypes(types)}
 									</div>
 									<div className="w-full flex justify-evenly">
-										<p className="text-lg md:text-xl text-center">Height: {height * 10} cm</p>
-										<p className="text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
+										<p className="sm:text-lg md:text-xl text-center">Height: {height * 10} cm</p>
+										<p className="sm:text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
 									</div>
 								</div>
 							</div>
