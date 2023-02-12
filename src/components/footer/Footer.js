@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Fade } from 'react-reveal'
 import Pagination from '../pagination/Pagination'
 import CycleForwardIcon from '../icon-components/cycle-forward-icon/CycleForwardIcon'
 import CycleBackIcon from '../icon-components/cycle-back-icon/CycleBackIcon'
@@ -27,9 +28,12 @@ const Footer = () => {
 	}
 
 	return (
-		<div className={`${is_loading ? 'hidden' : `w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}`}>
-			{renderContent()}
-		</div>
+		<Fade>
+			<div className={`${is_loading ? 'hidden' : `w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}`}>
+				{renderContent()}
+			</div>
+		</Fade>
+		
 	)
 }
 
