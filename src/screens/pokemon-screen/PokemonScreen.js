@@ -14,7 +14,7 @@ const PokemonScreen = () => {
 
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
-			return <p className="mb-1 md:mb-3 text-sm sm:text-2xl capitalize text-left mr-6" key={key}>{type_item.type.name}</p>
+			return <p className="mb-1 md:mb-3 text-sm sm:text-2xl capitalize text-left" key={key}>{type_item.type.name}</p>
 		})
 	}
 
@@ -43,7 +43,7 @@ const PokemonScreen = () => {
 									</section>
 								</Zoom>
 								<div className="md:hidden flex flex-col items-center">
-									<div className="flex items-center">
+									<div className="w-full flex items-center justify-evenly">
 											{renderTypes(types)}
 									</div>
 									<div className="w-full flex justify-evenly">
