@@ -13,7 +13,7 @@ const BackIcon = () => {
 	}
 	return (
 		<Link to="/" className="w-fit">
-			<div className="absolute top-5 md:top-0 left-0 md:relative flex group items-center mb-5 cursor-pointer hover:opacity-70" onClick={() => handleClick()}>
+			<div className="absolute top-2 md:top-0 left-0 md:relative flex group items-center mb-5 cursor-pointer hover:opacity-70" onClick={() => handleClick()}>
 				<img
 					src={`/images/icons/arrow-${theme}-mode.svg`}
 					alt="filter icon"

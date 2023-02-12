@@ -33,7 +33,7 @@ const PokemonScreen = () => {
 		<>
 			{is_loading && <LoadingSpinner />}
 			<Fade>
-				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-5'}`}>
+				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-10 md:pt-5'}`}>
 					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
 						
 							<div className="w-full md:w-6/12">

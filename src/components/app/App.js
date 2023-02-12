@@ -21,7 +21,7 @@ const App = () => {
 		return () => document.body.classList.remove(`${theme}-mode-bg-gradient`)
 	}, [dispatch, theme])
 	return (
-		<div className={`container w-full max-w-[700px] h-[90vh] ${theme}-mode-bg-primary px-10 mx-2 sm:mx-10 rounded-lg ${theme}-mode-border-container transition-all duration-300`}>
+		<div className={`container w-full max-w-[700px] h-[90vh] max-h-[700px] ${theme}-mode-bg-primary px-10 mx-2 sm:mx-10 rounded-lg ${theme}-mode-border-container transition-all duration-300`}>
 			<RouterComponent />
 		</div>
 	);
