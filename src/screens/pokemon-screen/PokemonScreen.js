@@ -23,7 +23,7 @@ const PokemonScreen = () => {
 	const renderStats = (stats) => {
 		return stats.map((stat, key) => {
 			return (
-				<p className="mb-3 text-sm sm:text-xl capitalize text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
+				<p className="mb-3 text-sm text-lg md:text-xl capitalize text-center" key={key}>{stat.stat.name}: {stat.base_stat}</p>
 			)
 		})
 	}
@@ -35,33 +35,35 @@ const PokemonScreen = () => {
 			<Fade>
 				<div className={`${is_loading ? 'hidden' : 'relative h-[90%] flex flex-col overflow-scroll pt-5'}`}>
 					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
-						<Zoom>
+						
 							<div className="w-full md:w-6/12">
-								<section
-									style={{ backgroundImage: `url(${image})` }}
-									className="w-full pb-[75%] sm:pb-[100%] bg-center bg-contain bg-no-repeat"
-								>
-								</section>
+								<Zoom>
+									<section
+										style={{ backgroundImage: `url(${image})` }}
+										className="w-full pb-[75%] sm:pb-[50%] md:pb-[100%] bg-center bg-contain bg-no-repeat"
+									>
+									</section>
+								</Zoom>
 								<div className="md:hidden flex flex-col items-center">
 									<div className="flex items-center">
 											{renderTypes(types)}
 									</div>
 									<div className="w-full flex justify-evenly">
-										<p className="mb-3 sm:text-xl text-center">Height: {height * 10} cm</p>
-										<p className="mb-3 sm:text-xl text-center">Weight: {weight / 10} kg</p>
+										<p className="mb-3 text-lg md:text-xl text-center">Height: {height * 10} cm</p>
+										<p className="mb-3 text-lg md:text-xl text-center">Weight: {weight / 10} kg</p>
 									</div>
 								</div>
 							</div>
-						</Zoom>
+						
 						<div className="flex flex-grow md:flex-col justify-center md:justify-start">
 							<BackIcon />
 							<div>
-								<h2 className="capitalize  underline text-4xl text-left mb-6">{name}</h2>
+								<h2 className="capitalize  underline text-2xl md:text-4xl text-left mb-6">{name}</h2>
 								<div className="hidden md:block flex items-center">
 									{renderTypes(types)}
 								</div>
-								<p className="hidden md:block mb-3 sm:text-xl text-left w-full">Height: {height * 10} cm</p>
-								<p className="hidden md:block mb-3 sm:text-xl text-left w-full">Weight: {weight / 10} kg</p>
+								<p className="hidden md:block mb-3 text-lg md:text-xl text-left w-full">Height: {height * 10} cm</p>
+								<p className="hidden md:block mb-3 text-lg md:text-xl text-left w-full">Weight: {weight / 10} kg</p>
 							</div>
 						</div>
 					</section>
