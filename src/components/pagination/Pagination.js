@@ -21,13 +21,13 @@ const Pagination = () => {
 	return (
 		<div className="w-full h-full flex justify-around items-center">
 			<button 
-				className={`${pokemon_list[0] === first_pokemon_being_displayed ? 'hidden' : `${theme}-mode-bg-secondary text-lg font-bold px-7 py-2 border rounded-lg transition-all duration-300`}`}
+				className={`${pokemon_list[0] === first_pokemon_being_displayed ? 'hidden' : `${theme}-mode-bg-secondary md:text-lg font-bold px-4 md:px-7 py-1 md:py-2 border rounded-lg transition-all duration-300`}`}
 				onClick={() => handlePrevBtnClick()}
 			>
 				Prev
 			</button>
 			<button 
-				className={`${pokemon_list[pokemon_list.length -1] === last_pokemon_being_displayed ? 'hidden' : `${theme}-mode-bg-secondary text-lg font-bold px-7 py-2 border rounded-lg transition-all duration-300`}`}
+				className={`${pokemon_list[pokemon_list.length -1] === last_pokemon_being_displayed ? 'hidden' : `${theme}-mode-bg-secondary md:text-lg font-bold px-4 md:px-7 py-1 md:py-2 border rounded-lg transition-all duration-300`}`}
 				onClick={() => handleNextBtnClick()}
 			>
 				Next
