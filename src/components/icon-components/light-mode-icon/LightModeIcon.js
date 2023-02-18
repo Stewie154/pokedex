@@ -13,7 +13,7 @@ const LightModeIcon = () => {
 		<img
 			src='/images/icons/sunny-outline.svg'
 			alt="filter icon"
-			className="w-7 cursor-pointer hover:opacity-50"
+			className="w-7 cursor-pointer md:hover:opacity-50"
 			onClick={() => handleClick()}
 		/>
 	)
