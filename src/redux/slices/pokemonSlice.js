@@ -50,6 +50,10 @@ export const fetchPokemonList = createAsyncThunk(
 				limit = 96
 				offset = 809
 				break
+			case "9":
+				limit = 103
+				offset = 905
+				break
 			default:
 				limit = 151
 				offset = null
