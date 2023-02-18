@@ -28,6 +28,7 @@ const PokemonListSelector = () => {
 			<option value="2">Generation 2</option>
 			<option value="3">Generation 3</option>
 			<option value="4">Generation 4</option>
+			<option value="5">Generation 5</option>
 		</select>
 	)
 }
