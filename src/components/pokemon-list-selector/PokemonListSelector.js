@@ -5,7 +5,7 @@ const PokemonListSelector = () => {
 
 	
 	return (
-		<select value={selectedValue}>
+		<select value={selectedValue} className={`bg-transparent text-xl cursor-pointer focus:outline-0`}>
 			<option value="1">Generation 1</option>
 			<option value="2">Generation 2</option>
 		</select>
