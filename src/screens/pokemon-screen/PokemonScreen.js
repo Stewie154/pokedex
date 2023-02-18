@@ -10,7 +10,7 @@ const PokemonScreen = () => {
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
 	const theme = useSelector(state => state.pokemon.theme)
 	const { name, height, weight, types, stats } = selected_pokemon
-	const image = selected_pokemon.sprites.other.dream_world.front_default
+	const image = selected_pokemon.sprites.other.dream_world.front_default !== null ? selected_pokemon.sprites.other.dream_world.front_default : selected_pokemon.sprites.front_default
 
 	const renderTypes = (types) => {
 		return types.map((type_item, key) => {
