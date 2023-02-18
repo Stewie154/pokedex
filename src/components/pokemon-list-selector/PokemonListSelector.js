@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { fetchPokemonList } from '../../redux/slices/pokemonSlice'
-import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react'
+import { fetchPokemonList, selectGeneration } from '../../redux/slices/pokemonSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 const PokemonListSelector = () => {
 	const dispatch = useDispatch()
-	const [selectedValue, setSelectedValue] = useState(1)
+	const generation = useSelector(state => state.pokemon.generation)
 
 	const handleChange = (generation) => {
-		setSelectedValue(generation)
+		dispatch(selectGeneration(generation))
 	}
 
 	useEffect(() => {
-		dispatch(fetchPokemonList(selectedValue))
-	}, [selectedValue])
+		dispatch(fetchPokemonList(generation))
+	}, [generation])
 	
 	return (
-		<select value={selectedValue} className={`bg-transparent text-xl cursor-pointer focus:outline-0`} onChange={(e) => {handleChange(e.target.value)}}>
+		<select value={generation} className={`bg-transparent text-xl cursor-pointer focus:outline-0`} onChange={(e) => {handleChange(e.target.value)}}>
 			<option value="1">Generation 1</option>
 			<option value="2">Generation 2</option>
 		</select>

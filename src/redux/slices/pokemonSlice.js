@@ -9,7 +9,8 @@ const initialState = {
 	is_loading: true,
 	selected_pokemon: null,
 	error: '',
-	theme: 'light'
+	theme: 'light',
+	generation: "1"
 }
 
 export const fetchPokemonList = createAsyncThunk(
@@ -62,6 +63,9 @@ const pokemonSlice = createSlice({
 		},
 		removeSelectedPokemon: (state) => {
 			state.selected_pokemon = null
+		},
+		selectGeneration: (state, action) => {
+			state.generation = action.payload
 		},
 		displayNextList: (state) => {
 			let pokemon_list = state.pokemon_list
@@ -154,7 +158,7 @@ const pokemonSlice = createSlice({
 	}
 })
 
-export const { selectPokemon, removeSelectedPokemon, displayNextList, displayPreviousList, toggleTheme } = pokemonSlice.actions
+export const { selectPokemon, selectGeneration, removeSelectedPokemon, displayNextList, displayPreviousList, toggleTheme } = pokemonSlice.actions
 
 export default pokemonSlice.reducer
 
