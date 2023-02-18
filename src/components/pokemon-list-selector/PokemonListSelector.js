@@ -26,6 +26,7 @@ const PokemonListSelector = () => {
 		<select value={generation} className={`bg-transparent text-xl cursor-pointer focus:outline-0`} onChange={(e) => {handleChange(e.target.value)}}>
 			<option value="1">Generation 1</option>
 			<option value="2">Generation 2</option>
+			<option value="3">Generation 3</option>
 		</select>
 	)
 }
