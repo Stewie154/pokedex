@@ -14,14 +14,14 @@ const initialState = {
 
 export const fetchPokemonList = createAsyncThunk(
 	'pokemon/fetchPokemonList',
-	async (generation = 1) => {
+	async (generation = "1") => {
 		let limit, offset
 		switch (generation) {
-			case 1:
+			case "1":
 				limit = 151
 				offset = null
 				break
-			case 2:
+			case "2":
 				limit = 100
 				offset = 151
 				break
