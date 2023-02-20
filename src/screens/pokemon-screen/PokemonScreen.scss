@@ -1,0 +1,7 @@
+.pokemon-screen {
+	.pokemon-image {
+		@media (max-width: 390px) {
+			padding-bottom: 45%;;
+		}
+	}
+}

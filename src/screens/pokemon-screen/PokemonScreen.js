@@ -1,4 +1,5 @@
 import React from 'react'
+import './PokemonScreen.scss'
 import { useSelector } from 'react-redux'
 import BackIcon from '../../components/icon-components/back-icon/BackIcon'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
@@ -31,13 +32,13 @@ const PokemonScreen = () => {
 		<>
 			{is_loading && <LoadingSpinner />}
 			<Fade>
-				<div className={`${is_loading ? 'hidden' : 'relative h-[80%] flex flex-col overflow-scroll pt-10 md:pt-5'}`}>
+				<div className={`${is_loading ? 'hidden' : 'pokemon-screen relative h-[80%] flex flex-col overflow-scroll pt-10 md:pt-5'}`}>
 					<section className="w-full flex flex-col-reverse md:flex-row-reverse justify-between">
 						<div className="w-full md:w-6/12">
 							<Zoom>
 								<section
 									style={{ backgroundImage: `url(${image})` }}
-									className="w-full pb-[75%] sm:pb-[40%] md:pb-[100%] mb-3 md:mb-0 bg-center bg-contain bg-no-repeat"
+									className="pokemon-image w-full pb-[65%] sm:pb-[40%] md:pb-[100%] mb-3 md:mb-0 bg-center bg-contain bg-no-repeat"
 								>
 								</section>
 							</Zoom>
