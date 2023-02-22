@@ -15,7 +15,7 @@ const initialState = {
 
 export const fetchPokemonList = createAsyncThunk(
 	'pokemon/fetchPokemonList',
-	async (generation = "1") => {
+	(generation = "1") => {
 		let limit, offset
 		switch (generation) {
 			case "1":
@@ -59,14 +59,12 @@ export const fetchPokemonList = createAsyncThunk(
 				offset = null
 				break
 		}
-		try {
-			const url = offset === null ? `https://pokeapi.co/api/v2/pokemon/?limit=${limit}` : `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
-			const response = await axios.get(url)
-			return response.data
-		}
-		catch (error) {
-			return error
-		}
+
+		const url = offset === null ? `https://pokeapi.co/api/v2/pokemon/?limit=${limit}` : `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
+		return axios
+				.get(url)
+				.then(response => response.data)
+				.catch(error => error)
 	}
 )
 
