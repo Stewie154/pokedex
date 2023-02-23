@@ -8,7 +8,7 @@ const initialState = {
 	last_pokemon_being_displayed: {},
 	is_loading: true,
 	selected_pokemon: null,
-	error: '',
+	error: null,
 	theme: 'light',
 	generation: "1"
 }
@@ -70,13 +70,11 @@ export const fetchPokemonList = createAsyncThunk(
 
 export const fetchSinglePokemon = createAsyncThunk(
 	'pokemon/fetchSinglePokemon',
-	async (pokemon_url) => {
-		try {
-			const response = await axios.get(pokemon_url)
-			return response.data
-		} catch (error) {
-			return error
-		}
+	(pokemon_url) => {
+		return axios
+				.get(pokemon_url)
+				.then(response => response.data)
+				.catch(error => error)
 	}
 )
 
@@ -149,12 +147,11 @@ const pokemonSlice = createSlice({
 			state.theme = theme
 		}
 	},
-	extraReducers: (builder) => {
-		builder.addCase(fetchPokemonList.pending, (state) => {
+	extraReducers: {
+		[fetchPokemonList.pending]: (state) => {
 			state.is_loading = true
-			console.log('loading')
-		})
-		builder.addCase(fetchPokemonList.fulfilled, (state, action) => {
+		},
+		[fetchPokemonList.fulfilled]: (state, action) => {
 			if (action.payload.name === 'AxiosError') {
 				state.is_loading = false
 				console.log(action.payload)
@@ -174,22 +171,22 @@ const pokemonSlice = createSlice({
 				state.first_pokemon_being_displayed = final_list.find(pokemon => pokemon.being_displayed === true)
 				state.last_pokemon_being_displayed = getLastDisplayedPokemon(state.pokemon_list)
 			}
-		})
-		builder.addCase(fetchPokemonList.rejected, (state, action) => {
+		},
+		[fetchPokemonList.rejected]: (state, action) => {
 			console.log('failed')
 			state.is_loading = false
 			state.error = action.error.message
-		})
-		// [fetchSinglePokemon.pending]: (state) => {
-		// 	state.is_loading = true
-		// },
-		// [fetchSinglePokemon.fulfilled]: (state, action) => {
-		// 	state.is_loading = false
-		// 	state.selected_pokemon = action.payload
-		// },
-		// [fetchSinglePokemon.rejected]: (state) => {
-		// 	state.is_loading = false
-		// }
+		},
+		[fetchSinglePokemon.pending]: (state) => {
+			state.is_loading = true
+		},
+		[fetchSinglePokemon.fulfilled]: (state, action) => {
+			state.is_loading = false
+			state.selected_pokemon = action.payload
+		},
+		[fetchSinglePokemon.rejected]: (state) => {
+			state.is_loading = false
+		}
 	}
 })
 
