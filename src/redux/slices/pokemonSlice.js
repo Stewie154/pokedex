@@ -149,12 +149,12 @@ const pokemonSlice = createSlice({
 	},
 	extraReducers: {
 		[fetchPokemonList.pending]: (state) => {
+			state.error = null
 			state.is_loading = true
 		},
 		[fetchPokemonList.fulfilled]: (state, action) => {
 			if (action.payload.name === 'AxiosError') {
 				state.is_loading = false
-				console.log(action.payload)
 				state.error = action.payload.message
 			}
 			else {
@@ -173,11 +173,11 @@ const pokemonSlice = createSlice({
 			}
 		},
 		[fetchPokemonList.rejected]: (state, action) => {
-			console.log('failed')
 			state.is_loading = false
 			state.error = action.error.message
 		},
 		[fetchSinglePokemon.pending]: (state) => {
+			state.error = null
 			state.is_loading = true
 		},
 		[fetchSinglePokemon.fulfilled]: (state, action) => {
