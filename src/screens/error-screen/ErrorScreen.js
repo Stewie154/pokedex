@@ -23,7 +23,10 @@ const ErrorScreen = () => {
 				className={`${theme}-mode-bg-secondary md:text-lg font-bold px-4 md:px-7 py-1 md:py-2 border rounded-lg transition-all duration-300`}
 				onClick={() => handleClick()}
 			>
-				Refresh
+				<img
+					className='w-[40px]'
+					src={`/images/icons/refresh-light-mode.svg`}
+				/>
 			</button>
 		</div>
 	)
