@@ -19,15 +19,11 @@ const ErrorScreen = () => {
 				src="/images/pikachu-meme.png"
 				alt="pikachu" 
 			/>
-			<button 
-				className={`${theme}-mode-bg-secondary md:text-lg font-bold px-4 md:px-7 py-1 md:py-2 border rounded-lg transition-all duration-300`}
+			<img
+				className='w-[60px]'
+				src={`/images/icons/refresh-${theme}-mode.svg`}
 				onClick={() => handleClick()}
-			>
-				<img
-					className='w-[40px]'
-					src={`/images/icons/refresh-${theme}-mode.svg`}
-				/>
-			</button>
+			/>
 		</div>
 	)
 }

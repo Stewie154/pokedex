@@ -60,7 +60,7 @@ export const fetchPokemonList = createAsyncThunk(
 				break
 		}
 
-		const url = offset === null ? `https://pokeapi.co/api/v2/pokemon/?limit=${limit}` : `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
+		const url = offset === null ? `https://pkeapi.co/api/v2/pokemon/?limit=${limit}` : `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
 		return axios
 				.get(url)
 				.then(response => response.data)
