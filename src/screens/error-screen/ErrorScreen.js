@@ -25,7 +25,7 @@ const ErrorScreen = () => {
 			>
 				<img
 					className='w-[40px]'
-					src={`/images/icons/refresh-light-mode.svg`}
+					src={`/images/icons/refresh-${theme}-mode.svg`}
 				/>
 			</button>
 		</div>
