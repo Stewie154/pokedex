@@ -19,7 +19,7 @@ const Footer = () => {
 		}
 		else {
 			return (
-				<div className="w-full h-full flex justify-center items-center">
+				<div className={`${is_loading ? 'hidden' : 'w-full h-full flex justify-center items-center'}`}>
 					<CycleBackIcon />
 					<CycleForwardIcon />
 				</div>
@@ -28,7 +28,7 @@ const Footer = () => {
 	}
 
 	return (
-		<Fade>
+		<Fade when={!is_loading}>
 			<div className={`${is_loading ? 'hidden' : `w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}`}>
 				{renderContent()}
 			</div>
