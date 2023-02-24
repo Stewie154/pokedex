@@ -1,17 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPokemonList, fetchSinglePokemon } from '../../redux/slices/pokemonSlice'
+import { fetchPokemonList } from '../../redux/slices/pokemonSlice'
 
 const ErrorScreen = () => {
 	const theme = useSelector(state => state.pokemon.theme)
 	const error = useSelector(state => state.pokemon.error)
-	const selected_pokemon = useSelector(state => state.pokemon.selected_pokemon)
 	const dispatch = useDispatch()
 
 	const handleRefreshClick = () => {
-		if (selected_pokemon === null) {
-			dispatch(fetchPokemonList())
-		}
+		dispatch(fetchPokemonList())	
 	}
 
 	return (
