@@ -22,7 +22,7 @@ const App = () => {
 		document.body.classList.add(`${theme}-mode-bg-gradient`)
 		return () => document.body.classList.remove(`${theme}-mode-bg-gradient`)
 	}, [dispatch, theme])
-	console.log(error)
+	
 	return (
 		<div className={`container w-full max-w-[700px] h-[90vh] max-h-[700px] ${theme}-mode-bg-primary px-5 sm:px-10 mx-2 sm:mx-10 rounded-lg ${theme}-mode-border-container transition-all duration-300`}>
 			{error === null ? <RouterComponent /> : <ErrorScreen />}

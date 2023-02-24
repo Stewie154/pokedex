@@ -28,7 +28,7 @@ const Footer = () => {
 	}
 
 	return (
-		<Fade when={!is_loading}>
+		<Fade>
 			<div className={`${is_loading ? 'hidden' : `w-full h-[10%] border-t ${theme}-mode-border-color-secondary`}`}>
 				{renderContent()}
 			</div>
