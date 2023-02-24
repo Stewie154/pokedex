@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { displayNextList, displayPreviousList } from '../../redux/slices/pokemonSlice'
 
 const Pagination = () => {
-	const theme = useSelector(state => state.pokemon.theme)
 	const dispatch = useDispatch()
+	const theme = useSelector(state => state.pokemon.theme)
 	const pokemon_list = useSelector(state => state.pokemon.pokemon_list)
 	const first_pokemon_being_displayed = useSelector(state => state.pokemon.first_pokemon_being_displayed)
 	const last_pokemon_being_displayed = useSelector(state => state.pokemon.last_pokemon_being_displayed)
