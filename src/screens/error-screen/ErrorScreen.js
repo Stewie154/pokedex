@@ -28,9 +28,9 @@ const ErrorScreen = () => {
 
 	return (
 		<Fade>
-			<div className="w-full h-full py-5 flex flex-col items-center justify-center">
-				<h1 className="text-3xl md:text-5xl pb-3">An Error Occurred</h1>
-				<h3 className="text-xl md:text-3xl">Name: {error}</h3>
+			<div className="w-full h-[90%] py-5 flex flex-col items-center justify-center">
+				<h1 className="text-center text-3xl md:text-5xl pb-3">An Error Occurred</h1>
+				<h3 className="text-center text-xl md:text-3xl">Name: {error}</h3>
 				<img
 					className="w-10/12 sm:w-8/12"
 					src="/images/pikachu-meme.png"
