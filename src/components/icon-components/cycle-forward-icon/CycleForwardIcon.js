@@ -8,7 +8,7 @@ const CycleForwardIcon = () => {
 	const pokemon_list = useSelector(state => state.pokemon.pokemon_list)
 	const selected_pokemon = useSelector(state => state.pokemon.selected_pokemon)
 	const dispatch = useDispatch()
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 
 	const getNextPokemon = () => {
 		let current_list_item = pokemon_list.find(pokemon => pokemon.name === selected_pokemon.name)
