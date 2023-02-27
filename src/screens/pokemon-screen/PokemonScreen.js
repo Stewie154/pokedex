@@ -20,6 +20,12 @@ const PokemonScreen = () => {
 		}
 	}, [error])
 
+	useEffect(() => {
+		if (selected_pokemon === null) {
+			navigate("/")
+		}
+	}, [selected_pokemon])
+
 	if (selected_pokemon !== null) {
 		const { name, height, weight, types, stats } = selected_pokemon
 		const image = selected_pokemon.sprites.other.dream_world.front_default !== null ? selected_pokemon.sprites.other.dream_world.front_default : selected_pokemon.sprites.front_default
