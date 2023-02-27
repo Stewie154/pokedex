@@ -181,8 +181,14 @@ const pokemonSlice = createSlice({
 			state.is_loading = true
 		},
 		[fetchSinglePokemon.fulfilled]: (state, action) => {
-			state.is_loading = false
-			state.selected_pokemon = action.payload
+			if (action.payload.name === 'AxiosError') {
+				state.is_loading = false
+				state.error = action.payload.message
+			}
+			else {
+				state.is_loading = false
+				state.selected_pokemon = action.payload
+			}
 		},
 		[fetchSinglePokemon.rejected]: (state) => {
 			state.is_loading = false
