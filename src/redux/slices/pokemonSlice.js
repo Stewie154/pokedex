@@ -190,8 +190,9 @@ const pokemonSlice = createSlice({
 				state.selected_pokemon = action.payload
 			}
 		},
-		[fetchSinglePokemon.rejected]: (state) => {
+		[fetchSinglePokemon.rejected]: (state, action) => {
 			state.is_loading = false
+			state.error = action.payload.message
 		}
 	}
 })
