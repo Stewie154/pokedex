@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import PokemonListItem from '../../components/pokemon-list-item/PokemonListItem'
@@ -9,13 +9,16 @@ const HomeScreen = () => {
 	const { pokemon_list, is_loading, error } = useSelector(store => store.pokemon)
 	const navigate = useNavigate()
 
+	useEffect(() => {
+		if (error !== null) {
+			navigate("/error")
+		}
+	}, [error])
+
 
 	const renderPokemon = () => {
 		if (is_loading) {
 			return <LoadingSpinner />
-		}
-		if (error) {
-			navigate("/error")
 		}
 		if (pokemon_list !== []) {
 			let fadeDelay = 0

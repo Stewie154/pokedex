@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPokemonList, removeSelectedPokemon } from '../../redux/slices/pokemonSlice'
 import { useNavigate } from "react-router-dom";
@@ -11,11 +11,17 @@ const ErrorScreen = () => {
 	const selected_pokemon = useSelector(state => state.pokemon.selected_pokemon)
 	const dispatch = useDispatch()
 
+	
+	useEffect(() => {
+		if (error === null) {
+			navigate("/")
+		}
+	}, [error])
+
 	const handleRefreshClick =  () => {
 		if (selected_pokemon) {
 			dispatch(removeSelectedPokemon())
 		}	
-		navigate("/")
 		dispatch(fetchPokemonList())
 	}
 

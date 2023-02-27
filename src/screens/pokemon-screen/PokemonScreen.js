@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './PokemonScreen.scss'
 import { useSelector } from 'react-redux'
+import { useNavigate } from "react-router-dom";
 import BackIcon from '../../components/icon-components/back-icon/BackIcon'
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner'
 import { Fade } from 'react-reveal'
 import { Zoom } from 'react-reveal'
 
 const PokemonScreen = () => {
+	const navigate = useNavigate()
 	const selected_pokemon = useSelector(store => store.pokemon.selected_pokemon)
 	const is_loading = useSelector(state => state.pokemon.is_loading)
 	const theme = useSelector(state => state.pokemon.theme)
+	const error = useSelector(state => state.pokemon.error)
+
+	useEffect(() => {
+		if (error !== null) {
+			navigate("/error")
+		}
+	}, [error])
 
 	if (selected_pokemon !== null) {
 		const { name, height, weight, types, stats } = selected_pokemon
