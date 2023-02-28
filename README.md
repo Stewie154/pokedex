@@ -7,6 +7,8 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 `npm install`
 `npm start`
 
+## My Implementation 
+
 * Step 1:
 	* Generate a react app with redux-toolkit with ` npx create-react-app my-app --template redux `
 	* Install tailwind https://tailwindcss.com/docs/guides/create-react-app
@@ -45,22 +47,16 @@ A pokedex app made with react and redux-toolkit, styled with tailwind css. Pokem
 	* Make sure the buttons only show if a prev / next url is available (eg no prev button on first page)
 
 * Step 5:
-	* Only fetch the first 151 pokemon (gen 1)
-	* Get fetchSinglePokemon action to fire for every pokemon on home screen, then console log the updated pokemon_list
-	* Replace each item in pokemon_list with the result of calling the items url, leaving pokemon_list with more info for each pokemon
-	* Add a being_shown property to each item, default to true
-	* Create a PokemonCard component and render each pokemon with it's image and type.
-	* Add grid / list item icons to toggle the view from cards to a list.
-	* Clicking a card takes user to pokemonScreen
-	* Create custom pagination to only show 15 pokemon per page
-	* Create a form component that gives the user the option to filter pokemon by type (water, fire, grass etc)
-	* Show form on filter icon click
-	* Get form functional so the api url accommodates the user's form input and retrieves the correct pokemon 
+	* Add options to fetch different generations of pokemon
+		* Create PokemonSelect component 
+		* Add state to redux store for "generation", which will hold a number value representing the generation
+		* Update the fetchPokemonList action to take a generation property, fetch correct pokemon list for the generation provided
+		* When the value selected in PokemonSelect changes, update the generation and fire the fetchPokemonList action, giving it the new generation as an argument
+		* Make sure everything works as expected
 
 * Step 6:
 	* Add animations throughout app
-	* add a light / dark mode toggle, create a new slice for this and conditionally render the light / dark classes throughout app
-	* Add feedback to ui to let user know they can scroll the page to see more pokemon
+	* add a light / dark mode toggle
 
 ## Getting Started with Create React App and Redux
 
